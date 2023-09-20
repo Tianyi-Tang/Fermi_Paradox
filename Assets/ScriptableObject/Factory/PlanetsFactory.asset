@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd8be485fda54863a049c6869c44183, type: 3}
+  m_Name: PlanetsFactory
+  m_EditorClassIdentifier: 
+  planetPrefabs:
+  - {fileID: 5899895653967130396, guid: 07df61069bece4fd5b43d120afc5ac54, type: 3}
+  - {fileID: 1712864234620563185, guid: 1a4e1ae3326e141499ea356444bf6391, type: 3}
+  planetTypes:
+  - {fileID: 11400000, guid: 64ff179d753234557968479403bc582b, type: 2}
+  - {fileID: 11400000, guid: cf7382aef3f5a4a818a63243181a1797, type: 2}

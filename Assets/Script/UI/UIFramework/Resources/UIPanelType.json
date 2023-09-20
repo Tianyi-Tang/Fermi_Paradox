@@ -1,0 +1,45 @@
+{
+    "infoList":
+    [
+        {
+            "panelTypeString": "TechnologyTree",
+            "path": "UI/UIPanel/TechnologyTreePanel"
+        },
+
+        {
+            "panelTypeString": "Civilization",
+            "path": "UI/UIPanel/CivilizationPanel"
+        },
+
+        {
+            "panelTypeString": "MainMenu",
+            "path": "UI/UIPanel/MainMenuPanel"
+        },
+
+        {
+            "panelTypeString": "PlanetarySystemOverView",
+            "path": "UI/UIPanel/PlanetarySystemOverViewPanel"
+        },
+
+        {
+            "panelTypeString": "PlayerOverView",
+            "path": "UI/UIPanel/PlayerOverViewPanel"
+        },
+
+        {
+            "panelTypeString": "PlanetarySystem_MainMenu",
+            "path": "UI/UIPanel/PlanetarySystem_MainMenuPanel"
+        },
+
+        {
+            "panelTypeString": "Selection_MainMenu",
+            "path": "UI/UIPanel/Selection_MainMenuPanel"
+        },
+
+        {
+            "panelTypeString": "PlanetsView",
+            "path": "UI/UIPanel/PlanetsViewPanel"
+        }
+
+    ]
+}

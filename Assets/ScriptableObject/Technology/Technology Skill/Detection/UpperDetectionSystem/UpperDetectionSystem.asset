@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a747c779dc26846efa039d1ab195e1b2, type: 3}
+  m_Name: UpperDetectionSystem
+  m_EditorClassIdentifier: 
+  technologyName: UpperDetectionSystem
+  technologyID: UDS001
+  per_Technonlogies:
+  - {fileID: 11400000, guid: da4fe6ead79c343328220677a3b31061, type: 2}
+  post_Technologies: []
+  technologyType: {fileID: 11400000, guid: 084012d9dd4a848f6ab7bc707a1f4e11, type: 2}
+  activationCost: {fileID: 11400000, guid: f828a4a129c60428fa8834d3f4d0481f, type: 2}
+  technologyBuff: {fileID: 11400000, guid: e5dc1e0e57fff4dd895836c5f4eed3cb, type: 2}
+  canvasGroup: {fileID: 0}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8978e43b65b7d41ec9d12b9ab3e8e0aa, type: 3}
+  m_Name: ActivationCost_2Type
+  m_EditorClassIdentifier: 
+  technologyPointType1: {fileID: 11400000, guid: 3e5b09755d62d4e7bbf294878c618f28, type: 2}
+  technologyPointCost1: 3
+  technologyPointType2: {fileID: 11400000, guid: 09f7f246188ab459890efdfc22d26fc9, type: 2}
+  technologyPointCost2: 2

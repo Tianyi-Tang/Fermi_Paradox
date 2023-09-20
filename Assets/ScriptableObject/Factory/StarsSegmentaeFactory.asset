@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7520642f28d4023965c9e079e376e2, type: 3}
+  m_Name: StarsSegmentaeFactory
+  m_EditorClassIdentifier: 
+  starsSegmentae: {fileID: 4284533036232682588, guid: 41334ab784841450fae666391092bc75, type: 3}
+  smallSegmentae: {fileID: 1033085993020014958, guid: 74e4aabfab8fc4e11a82e2ece8d48b2e, type: 3}
+  segmentaeAreas:
+  - {fileID: 11400000, guid: cd0c77e75404647a1b101fb34e851a4d, type: 2}
+  - {fileID: 11400000, guid: 6de953cd754594ac885465d0eef74280, type: 2}
+  - {fileID: 11400000, guid: 0d20bf02a7d1941478ec01385d107b1e, type: 2}
+  segmentaeScales:
+  - {fileID: 11400000, guid: 4da88b575441f42fd97cf957b5fb6cf7, type: 2}
+  - {fileID: 11400000, guid: 043d97c468b7946c7a0d79c61d4d1ad6, type: 2}

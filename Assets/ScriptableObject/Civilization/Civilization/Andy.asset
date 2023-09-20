@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0164f679cdb4035bd3f0bfabc9ded3, type: 3}
+  m_Name: Andy
+  m_EditorClassIdentifier: 
+  CivilizationName: Andy
+  playControl: 0
+  civilArchives: {fileID: 11400000, guid: bc5b86f17aace41ffa49ad5c24af91d1, type: 2}
+  civilProfileCollections: {fileID: 0}
+  civilBasicInfor: {fileID: 11400000, guid: 876627afc925c482c893c7c599623e75, type: 2}
+  civilScience: {fileID: 11400000, guid: 2a8767db8feec43e3b05229602c101c5, type: 2}
+  civilBuff: {fileID: 11400000, guid: db009ccc5a52b46c89e4781ed69cc720, type: 2}
+  planetarySystems:
+  - {fileID: 0}
+  - {fileID: 0}

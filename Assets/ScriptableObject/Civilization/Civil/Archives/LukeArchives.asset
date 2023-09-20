@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa3748d6da2146978116009cd3245ac, type: 3}
+  m_Name: LukeArchives
+  m_EditorClassIdentifier: 
+  civilTechnology: {fileID: 11400000, guid: 1f34510c5f3894a59886e28bdf39d3c1, type: 2}
