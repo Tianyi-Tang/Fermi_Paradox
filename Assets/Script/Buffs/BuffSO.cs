@@ -16,7 +16,7 @@ public class BuffSO : ScriptableObject
         return -1;
     }
 
-    public virtual GameStatsSO getGameStat(int num)
+    public virtual GameParameterSO getGameStat(int num)
     {
         return null;
     }

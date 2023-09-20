@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Buff_1Type",menuName = "SO/Buff/BuffNum/1Type")]
 public class Buff_1TypeSO : BuffSO
 {
-    [SerializeField]private GameStatsSO technologyBuff;
+    [SerializeField]private GameParameterSO technologyBuff;
     [SerializeField]private float paramete_flaot;
     [SerializeField] private int paramete_int;
 
@@ -17,7 +17,7 @@ public class Buff_1TypeSO : BuffSO
         return 1;
     }
 
-    public override GameStatsSO getGameStat(int num)
+    public override GameParameterSO getGameStat(int num)
     {
         if (num == 0)
             return technologyBuff;

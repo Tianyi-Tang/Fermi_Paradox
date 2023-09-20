@@ -6,39 +6,39 @@ public class GameStatsContainer : MonoBehaviour
 {
     public static GameStatsContainer instance;
 
-    [SerializeField] private GameStatsSO Concealment;
-    [SerializeField] private GameStatsSO Detection;
-    [SerializeField] private GameStatsSO IncreaseMiningSpeed;
-    [SerializeField] private GameStatsSO ScienceDevelopmentSpeed;
+    [SerializeField] private GameParameterSO Concealment;
+    [SerializeField] private GameParameterSO Detection;
+    [SerializeField] private GameParameterSO IncreaseMiningSpeed;
+    [SerializeField] private GameParameterSO ScienceDevelopmentSpeed;
 
-    [SerializeField] private List<GameStatsSO> civil_baseInfro;
+    [SerializeField] private List<GameParameterSO> civil_baseInfro;
 
     private void Start()
     {
         instance = this;
     }
 
-    public GameStatsSO getConcealment()
+    public GameParameterSO getConcealment()
     {
         return Concealment;
     }
 
-    public GameStatsSO getDetection()
+    public GameParameterSO getDetection()
     {
         return Detection;
     }
 
-    public GameStatsSO getIncreaseMiningSpeed()
+    public GameParameterSO getIncreaseMiningSpeed()
     {
         return IncreaseMiningSpeed;
     }
 
-    public GameStatsSO getScienceDevelopmentSpeed()
+    public GameParameterSO getScienceDevelopmentSpeed()
     {
         return ScienceDevelopmentSpeed;
     }
 
-    public List<GameStatsSO> getAllGameStatsWithInCivilBasicInfor()
+    public List<GameParameterSO> getAllGameStatsWithInCivilBasicInfor()
     {
         return civil_baseInfro;
     }

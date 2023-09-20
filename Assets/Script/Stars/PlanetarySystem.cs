@@ -19,7 +19,7 @@ public class PlanetarySystem : MonoBehaviour
     [SerializeField]private int civilizationResource; //文明在该行星用有的资源
 
     float timeInterval = 0;
-    private GameStatsSO scienceDevelopment;
+    private GameParameterSO scienceDevelopment;
 
     private void Start()
     {

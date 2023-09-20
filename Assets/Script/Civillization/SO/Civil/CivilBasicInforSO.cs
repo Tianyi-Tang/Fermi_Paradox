@@ -18,15 +18,15 @@ public class CivilBasicInforSO : ScriptableObject
 
     public float detectionStats = 0;
 
-    private Dictionary<GameStatsSO, float> allBasicInfor_float = new Dictionary<GameStatsSO, float>();
-    private Dictionary<GameStatsSO, int> allBasicInfor_int = new Dictionary<GameStatsSO, int>();
+    private Dictionary<GameParameterSO, float> allBasicInfor_float = new Dictionary<GameParameterSO, float>();
+    private Dictionary<GameParameterSO, int> allBasicInfor_int = new Dictionary<GameParameterSO, int>();
 
     /// <summary>
     /// 将该 class 里面的有关 GameStats 的成员变量，存储在对应的 Dictionary 里面
     /// </summary>
     public void initialDictionary()
     {
-        foreach (GameStatsSO gameStat in GameStatsContainer.instance.getAllGameStatsWithInCivilBasicInfor())
+        foreach (GameParameterSO gameStat in GameStatsContainer.instance.getAllGameStatsWithInCivilBasicInfor())
         {
             if (gameStat.getSpecificName() != null)
             {
@@ -43,7 +43,7 @@ public class CivilBasicInforSO : ScriptableObject
     /// </summary>
     /// <param name="gameStat">需要获取数值的 GameStats</param>
     /// <returns>该 GameStats 的值</returns>
-    public float getBasicInfor_float(GameStatsSO gameStat)
+    public float getBasicInfor_float(GameParameterSO gameStat)
     {
         float value;
         if (allBasicInfor_float.TryGetValue(gameStat, out value))
@@ -57,7 +57,7 @@ public class CivilBasicInforSO : ScriptableObject
     /// </summary>
     /// <param name="gameStat">需要获取数值的 GameStats</param>
     /// <returns>该 GameStats 的值</returns>
-    public int getBasicInfor_int(GameStatsSO gameStat)
+    public int getBasicInfor_int(GameParameterSO gameStat)
     {
         int value;
         if (allBasicInfor_int.TryGetValue(gameStat, out value))
@@ -71,7 +71,7 @@ public class CivilBasicInforSO : ScriptableObject
     /// </summary>
     /// <param name="gameStat">需要增加数值的 GameStats</param>
     /// <param name="addValue">需要增加的数值</param>
-    public void addValueToBasicInfor(GameStatsSO gameStat, float addValue)
+    public void addValueToBasicInfor(GameParameterSO gameStat, float addValue)
     {
         float value;
         if (!allBasicInfor_float.TryGetValue(gameStat, out value))
@@ -85,7 +85,7 @@ public class CivilBasicInforSO : ScriptableObject
     /// </summary>
     /// <param name="gameStat">需要增加数值的 GameStats</param>
     /// <param name="addValue">需要增加的数值</param>
-    public void addValueToBasicInfor(GameStatsSO gameStat, int addValue)
+    public void addValueToBasicInfor(GameParameterSO gameStat, int addValue)
     {
         int value;
         if (!allBasicInfor_int.TryGetValue(gameStat, out value))

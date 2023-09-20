@@ -70,7 +70,7 @@ public class Ships : MonoBehaviour
         return sameComponents;
     }
 
-    private float getSumOfParameter(GameStatsSO buffType)
+    private float getSumOfParameter(GameParameterSO buffType)
     {
         float parameter = 0;
 
@@ -82,7 +82,7 @@ public class Ships : MonoBehaviour
         return parameter;
     }
 
-    private float getBuffParameter(BuffSO currentBuff, GameStatsSO buffType)
+    private float getBuffParameter(BuffSO currentBuff, GameParameterSO buffType)
     {
         int index = currentBuff.getGameStatsNum();
         bool existBuffType = false;

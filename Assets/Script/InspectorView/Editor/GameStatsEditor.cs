@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(GameStatsSO))]
+[CustomEditor(typeof(GameParameterSO))]
 public class GameStatsEditor : Editor
 {
     public override void OnInspectorGUI()

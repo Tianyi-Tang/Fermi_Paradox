@@ -103,7 +103,7 @@ public class CivilizationSO : ScriptableObject
     /// </summary>
     /// <param name="gameStats">特定的 GameStats</param>
     /// <returns>文明关于该 GameStats的数值</returns>
-    public int getGameStats_int(GameStatsSO gameStats)
+    public int getGameStats_int(GameParameterSO gameStats)
     {
         return civilBasicInfor.getBasicInfor_int(gameStats) + (int) civilBuff.getAdditonalGameStats(gameStats);
     }
@@ -113,7 +113,7 @@ public class CivilizationSO : ScriptableObject
     /// </summary>
     /// <param name="gameStats">特定的 GameStats</param>
     /// <returns>文明关于该 GameStats的数值</returns>
-    public float getGameStats_flaot(GameStatsSO gameStats)
+    public float getGameStats_flaot(GameParameterSO gameStats)
     {
         return civilBasicInfor.getBasicInfor_float(gameStats) + (int)civilBuff.getAdditonalGameStats(gameStats);
     }
