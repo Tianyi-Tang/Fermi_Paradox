@@ -8,7 +8,7 @@ using UnityEngine;
 /// 注意该 class 的 inspector被修改过，如果想要让 inspector 显示任何新增内容，请去 GameStatsEditor 中修改
 /// </summary>
 [CreateAssetMenu(fileName ="GameStats",menuName ="SO/Game Stats")]
-public class GameStatsSO : ScriptableObject
+public class GameParameterSO : ScriptableObject
 {
     [SerializeField] private bool hasSpecificName = false;
     [SerializeField] private string specificName = null;
