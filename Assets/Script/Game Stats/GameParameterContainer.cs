@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStatsContainer : MonoBehaviour
+public class GameParameterContainer : MonoBehaviour
 {
-    public static GameStatsContainer instance;
+    public static GameParameterContainer instance;
 
     [SerializeField] private GameParameterSO Concealment;
     [SerializeField] private GameParameterSO Detection;

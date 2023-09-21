@@ -26,7 +26,7 @@ public class CivilBasicInforSO : ScriptableObject
     /// </summary>
     public void initialDictionary()
     {
-        foreach (GameParameterSO gameStat in GameStatsContainer.instance.getAllGameStatsWithInCivilBasicInfor())
+        foreach (GameParameterSO gameStat in GameParameterContainer.instance.getAllGameStatsWithInCivilBasicInfor())
         {
             if (gameStat.getSpecificName() != null)
             {

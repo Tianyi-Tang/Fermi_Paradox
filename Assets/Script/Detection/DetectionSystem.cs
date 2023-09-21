@@ -85,7 +85,7 @@ public class DetectionSystem : MonoBehaviour
 
     public float getDectionParamter()
     {
-        return civilzation.getGameStats_flaot(GameStatsContainer.instance.getDetection());
+        return civilzation.getGameStats_flaot(GameParameterContainer.instance.getDetection());
     }
 
     /// <summary>

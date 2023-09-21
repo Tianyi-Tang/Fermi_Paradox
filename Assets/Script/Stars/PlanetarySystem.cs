@@ -23,7 +23,7 @@ public class PlanetarySystem : MonoBehaviour
 
     private void Start()
     {
-        scienceDevelopment = GameStatsContainer.instance.getScienceDevelopmentSpeed();
+        scienceDevelopment = GameParameterContainer.instance.getScienceDevelopmentSpeed();
         starsInvisible();
     }
 
