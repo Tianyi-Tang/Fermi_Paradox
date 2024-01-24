@@ -8,7 +8,7 @@ using System;
 /// </summary>
 public class DetectionManager : MonoBehaviour
 {
-    private List<DetectionSystem> player_detectionSystem;
+    [SerializeField]private List<DetectionSystem> player_detectionSystem;
 
     [SerializeField]private DetectionErrorSO detectionError;
 
@@ -45,21 +45,18 @@ public class DetectionManager : MonoBehaviour
     /// <returns>误差值</returns>
     private float calcualteMax_playerDectionParameter(Transform target)
     {
-        float max_dectionParameter= -99;
+        float max_dectionParameter= -99.0f;
         float currentdectionParameter;
 
-        int index = 0;
-
-
-        do
+        //问题所在
+        for (int i = 0; i < player_detectionSystem.Count; i++)
         {
-            currentdectionParameter = player_detectionSystem[index].getDectionParamter() + addtionalDectionParameter(player_detectionSystem[index],target);
-            currentdectionParameter -= calculateDistanceAffect(target, player_detectionSystem[index].transform);
-
+            currentdectionParameter = player_detectionSystem[i].getDectionParamter() + addtionalDectionParameter(player_detectionSystem[i], target);
+            currentdectionParameter -= calculateDistanceAffect(target, player_detectionSystem[i].transform);
             if (max_dectionParameter < currentdectionParameter)
                 max_dectionParameter = currentdectionParameter;
-            index++;
-        } while (index+1 < player_detectionSystem.Count);
+        }
+
 
         return max_dectionParameter;
     }
@@ -95,14 +92,15 @@ public class DetectionManager : MonoBehaviour
     {
         StarsSegmentae segmentae = StarsSegmentaeSpawn.SpawnInstance.fingSegmentae(traget.GetComponent<PlanetarySystem>());
         levelDifference = 0;
-        do
+
+        while (segmentae != null)
         {
             if (civilSystem.searchSegmentae(segmentae) == true)
                 return true;
 
             levelDifference++;
-            segmentae.getUpperSegmentae();
-        } while (segmentae != null);
+            segmentae = segmentae.getUpperSegmentae();
+        }
 
         return false;
     }

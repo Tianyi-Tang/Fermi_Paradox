@@ -9,6 +9,7 @@ public class FixedStar : MonoBehaviour
 {
     public float deathTimer;
     public float temperature;
+    public float rotation;
 
     // Start is called before the first frame update
     void Start()

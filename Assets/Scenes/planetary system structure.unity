@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff3b7fb5a5d04bb5b70d4fc43ede575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_detectionSystem: []
   detectionError: {fileID: 11400000, guid: ce378d66035cc4772afbd5ba332e67b2, type: 2}
 --- !u!1 &340441882
 GameObject:
@@ -886,7 +887,6 @@ MonoBehaviour:
   redTechnologyPoint: {fileID: 11400000, guid: c171605926f664673b21bee04ee5f489, type: 2}
   blueTechnologyPoint: {fileID: 11400000, guid: 3e5b09755d62d4e7bbf294878c618f28, type: 2}
   yellowTechnologyPoint: {fileID: 11400000, guid: 09f7f246188ab459890efdfc22d26fc9, type: 2}
-  MiningTest: {fileID: 11400000, guid: e2b6d3a0e4f794cfabc86e69b241e09b, type: 2}
 --- !u!1 &2000801971
 GameObject:
   m_ObjectHideFlags: 0
