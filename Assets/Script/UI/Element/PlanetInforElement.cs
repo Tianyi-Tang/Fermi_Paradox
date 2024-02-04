@@ -24,9 +24,4 @@ public class PlanetInforElement : DisplayItem
         viewPlanet = planet;
     }
 
-    public void test()
-    {
-        if (viewPlanet != null)
-            this.GetComponentInParent<PlanetsViewPanel>().addColonyToPlanet(viewPlanet, planetBuildings[0]);
-    }
 }
