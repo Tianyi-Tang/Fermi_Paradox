@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Colony : MonoBehaviour
 {
+    private CivilizationSO owner;
+    private int totalResource;
 
-
-    private int resource;
 
     void Start()
     {
