@@ -6,6 +6,14 @@ public class Colony : MonoBehaviour
 {
     private CivilizationSO owner;
     private int totalResource;
+    private List<PlanetHabitation> habitations;
+    private int resourceAddingSum;
+
+    public void changeResourceAdding(int changeValue) {
+        resourceAddingSum += changeValue;
+    }
+
+
 
 
     void Start()
