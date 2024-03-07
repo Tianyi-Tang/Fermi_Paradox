@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CelestialObjectMoving
+public class CelestialObjectMoving: MonoBehaviour
 {
-    protected float revolutionSpeed;
+    protected float rotationSpeed;
 
-    public abstract void celetialMoving();
-    protected abstract void rotation();
+    public void celestialMoving() {
+        rotation();
+    }
 
+
+    protected void rotation()
+    {
+        transform.Rotate(Vector3.up, Time.deltaTime * rotationSpeed);
+    }
 }
