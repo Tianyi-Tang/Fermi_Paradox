@@ -56,12 +56,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   revolutionSpeed: 20
   rotationSpeed: 60
-  fixedStarPosition: {x: 0, y: 0, z: 0}
-  distanceBetweenFixedStar: 6
+  fixedStarPosition: {x: 20.610973, y: 3, z: -8.682339}
+  distanceBetweenFixedStar: 4
   orbit: {fileID: 0}
   planetType: {fileID: 11400000, guid: 64ff179d753234557968479403bc582b, type: 2}
   planetElements: []
   planetCorrectionTag: []
+  remainResource: 944
   parent: {fileID: 0}
 --- !u!23 &-6465311776425329196
 MeshRenderer:
