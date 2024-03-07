@@ -7,7 +7,6 @@ public class PlanetMoving : CelestialObjectMoving
     [SerializeField] private float revolutionSpeed;
     [SerializeField] private float revolutionRadius;
     private Vector3 fixedStarPosition;
-    private LineRenderer orbit;
 
     public void passpassParameter(float rotationSpeed,float revolutionSpeed,float revolutionRadius,Transform fixedStar)
     {
@@ -16,14 +15,13 @@ public class PlanetMoving : CelestialObjectMoving
         this.revolutionRadius = revolutionRadius;
         this.fixedStarPosition = fixedStar.transform.position;
         getInfor = true;
-        createOrbit(fixedStar);
     }
 
-    private void createOrbit(Transform fixedStar) {
+    public LineRenderer createOrbit(Transform fixedStar) {
         GameObject gol = new GameObject { name = "Circle" };
         gol.transform.position = fixedStarPosition;
         gol.DrawCircle(revolutionRadius, 0.2f,fixedStar);
-        orbit = gol.GetComponent<LineRenderer>();
+        return gol.GetComponent<LineRenderer>();
     }
 
     private void revolution() {
