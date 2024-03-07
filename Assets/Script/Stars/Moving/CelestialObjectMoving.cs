@@ -5,9 +5,12 @@ using UnityEngine;
 public class CelestialObjectMoving: MonoBehaviour
 {
     protected float rotationSpeed;
+    protected bool getInfor = false;
 
-    public virtual void passParameter(float rotationSpeed) {
+    public virtual void passParameter(float rotationSpeed)
+    {
         this.rotationSpeed = rotationSpeed;
+        getInfor = true;
     }
 
     protected virtual void rotation()
@@ -17,6 +20,10 @@ public class CelestialObjectMoving: MonoBehaviour
 
     protected virtual void Update()
     {
-        rotation();
+        if (getInfor)
+        {
+            rotation();
+        }
+        
     }
 }
