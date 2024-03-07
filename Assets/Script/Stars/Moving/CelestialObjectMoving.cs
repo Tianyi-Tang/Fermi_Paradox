@@ -6,7 +6,7 @@ public class CelestialObjectMoving: MonoBehaviour
 {
     protected float rotationSpeed;
 
-    public virtual void passParameter(int rotationSpeed) {
+    public virtual void passParameter(float rotationSpeed) {
         this.rotationSpeed = rotationSpeed;
     }
 
