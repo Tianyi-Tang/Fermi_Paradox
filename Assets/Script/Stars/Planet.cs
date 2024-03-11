@@ -38,6 +38,15 @@ public class Planet : MonoBehaviour
         rotation();
     }
 
+    public void passInfor( Vector3 fixedStarPosition, float distance, PlanetTypeSO type, Transform stars, int planetResource)
+    {
+        this.fixedStarPosition = fixedStarPosition;
+        distanceBetweenFixedStar = distance;
+        planetType = type;
+        parent = stars;
+        remainResource = planetResource;
+    }
+
     /// <summary>
     /// 实现行星的公转
     /// </summary>

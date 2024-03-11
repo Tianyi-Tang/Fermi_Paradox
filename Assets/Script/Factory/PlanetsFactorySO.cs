@@ -47,12 +47,13 @@ public class PlanetsFactorySO : ScriptableObject
     /// <param name="planetType">行星的种类</param>
     private void initializationAttribute(Planet planet,Vector3 fixedStarPosition, float distance, PlanetTypeSO planetType,Transform stars, int planetResource)
     {
-        planet.fixedStarPosition = fixedStarPosition;
-        planet.distanceBetweenFixedStar = distance;
-        planet.planetType = planetType;
-        planet.parent = stars;
+        planet.passInfor(fixedStarPosition, distance, planetType, stars, planetResource);
+        //planet.fixedStarPosition = fixedStarPosition;
+        //planet.distanceBetweenFixedStar = distance;
+        //planet.planetType = planetType;
+        //planet.parent = stars;
 
-        planet.setRemainResourec(planetResource);
+        //planet.setRemainResourec(planetResource);
     }
 
      
