@@ -14,7 +14,7 @@ public class Planet : MonoBehaviour
     [SerializeField]private float revolutionSpeed;
     public float rotationSpeed;
 
-    public Vector3 fixedStarPosition;
+    [SerializeField]private Vector3 fixedStarPosition;
     public float distanceBetweenFixedStar; // 1 million km(real) = 1m(unity)
     [SerializeField]private LineRenderer orbit;
 
