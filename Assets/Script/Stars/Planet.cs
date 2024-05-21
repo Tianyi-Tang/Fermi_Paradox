@@ -28,7 +28,6 @@ public class Planet : MonoBehaviour
 
     private void Awake()
     {
-        changePosition();
         creatOrbit();
     }
 
@@ -65,13 +64,13 @@ public class Planet : MonoBehaviour
         orbit = gol.GetComponent<LineRenderer>();
     }
 
-    /// <summary>
-    /// 根据恒星的位置和与恒星的距离来改变星球的位置
-    /// </summary>
-    private void changePosition()
-    {
-        transform.Translate(fixedStarPosition.x, fixedStarPosition.y, fixedStarPosition.z + distanceBetweenFixedStar);
-    }
+    ///// <summary>
+    ///// 根据恒星的位置和与恒星的距离来改变星球的位置
+    ///// </summary>
+    //private void changePosition()
+    //{
+    //    transform.Translate(fixedStarPosition.x, fixedStarPosition.y, fixedStarPosition.z + distanceBetweenFixedStar);
+    //}
 
     public float getMass()
     {

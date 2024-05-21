@@ -194,13 +194,13 @@ public class PlanetarySystem : MonoBehaviour
         return fleets;
     }
 
-    public CivilArchivesSO getCivilArchives()
-    {
-        if (planetarySystemOwner == null)
-            return null;
-        else
-            return planetarySystemOwner.GetCivilArchives();
-    }
+    //public CivilArchivesSO getCivilArchives()
+    //{
+    //    if (planetarySystemOwner == null)
+    //        return null;
+    //    else
+    //        return planetarySystemOwner.GetCivilArchives();
+    //}
 
     public CivilizationSO getPlanetarySystemOwner()
     {
