@@ -22,22 +22,25 @@ public class PlanetarySystemInitialization : MonoBehaviour
     public List<PlanetTerraformTagSO> planetElements;
     public List<PlanetCorrectionTagSO> planetTags;
 
+    private FixedStar fixedStar;
+
 
     private void Awake()
     {
         creatFixedStar();
+        
+    }
+
+    private void Start()
+    {
         for (int i = 0; i < planetNum; i++)
         {
             creatPlanets();
             planetOrbitNum++;
         }
-
         FindObjectOfType<PlanetarySystemSpawn>().initializationCompleteNum += 1;
-    }
 
-    private void Start()
-    {
-        addAllPlanetOrbits();
+        //addAllPlanetOrbits();
     }
 
     /// <summary>
@@ -61,6 +64,7 @@ public class PlanetarySystemInitialization : MonoBehaviour
         currentPlanetDistance += Random.Range(3, 5);
         int resuorec = Random.Range(400, 1000);
         Planet planet = planetsFactory.createPlanet(planetType[0],planetarySystem.getFixedStar().transform.position,currentPlanetDistance, stars.transform, resuorec);
+        planet.transform.Translate(fixedStar.transform.position.x, fixedStar.transform.position.y, fixedStar.transform.position.z + currentPlanetDistance);
         planet.transform.parent = stars.transform;
         planetarySystem.addPlanet(planet);
     }
@@ -70,7 +74,7 @@ public class PlanetarySystemInitialization : MonoBehaviour
     /// </summary>
     private void creatFixedStar()
     {
-        FixedStar fixedStar = fixedStarFactory.createFixedStar();
+        fixedStar = fixedStarFactory.createFixedStar();
         fixedStar.transform.parent = stars.transform;
         fixedStar.transform.position = transform.position;
         planetarySystem.setFixedStar(fixedStar);
