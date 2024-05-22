@@ -67,6 +67,17 @@ public class PlanetarySystemInitialization : MonoBehaviour
         planet.transform.Translate(fixedStar.transform.position.x, fixedStar.transform.position.y, fixedStar.transform.position.z + currentPlanetDistance);
         planet.transform.parent = stars.transform;
         planetarySystem.addPlanet(planet);
+        createOrbit(currentPlanetDistance);
+    }
+
+    private void createOrbit(float distanceBetweenFixedStar)
+    {
+        GameObject gol = new GameObject { name = "Circle" };
+        gol.transform.position = fixedStar.transform.position;
+        gol.DrawCircle(distanceBetweenFixedStar, 0.2f, stars.transform);
+        planetarySystem.addPlanetsOrbits(gol.GetComponent<LineRenderer>());
+        gol.GetComponent<LineRenderer>().enabled = false;
+
     }
 
     /// <summary>

@@ -28,7 +28,6 @@ public class Planet : MonoBehaviour
 
     private void Awake()
     {
-        creatOrbit();
     }
 
     void Update()
@@ -53,16 +52,16 @@ public class Planet : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * rotationSpeed);
     }
 
-    /// <summary>
-    /// 展现星球的运行轨道
-    /// </summary>
-    private void creatOrbit()
-    {
-        GameObject gol = new GameObject { name = "Circle" };
-        gol.transform.position = fixedStarPosition;
-        gol.DrawCircle(distanceBetweenFixedStar, 0.2f, parent);
-        orbit = gol.GetComponent<LineRenderer>();
-    }
+    ///// <summary>
+    ///// 展现星球的运行轨道
+    ///// </summary>
+    //private void creatOrbit()
+    //{
+    //    GameObject gol = new GameObject { name = "Circle" };
+    //    gol.transform.position = fixedStarPosition;
+    //    gol.DrawCircle(distanceBetweenFixedStar, 0.2f, parent);
+    //    orbit = gol.GetComponent<LineRenderer>();
+    //}
 
     ///// <summary>
     ///// 根据恒星的位置和与恒星的距离来改变星球的位置
