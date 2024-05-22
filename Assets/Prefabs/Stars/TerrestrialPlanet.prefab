@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5899895653967130396}
   - component: {fileID: -6465311776425329196}
   - component: {fileID: 5092840615181496622}
+  - component: {fileID: 8015005385306089034}
   m_Layer: 7
   m_Name: TerrestrialPlanet
   m_TagString: Untagged
@@ -56,12 +57,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   revolutionSpeed: 20
   rotationSpeed: 60
-  fixedStarPosition: {x: 0, y: 0, z: 0}
-  distanceBetweenFixedStar: 6
+  fixedStarPosition: {x: -9.514336, y: 3, z: -7.726227}
+  distanceBetweenFixedStar: 10
   orbit: {fileID: 0}
   planetType: {fileID: 11400000, guid: 64ff179d753234557968479403bc582b, type: 2}
   planetElements: []
   planetCorrectionTag: []
+  remainResource: 406
   parent: {fileID: 0}
 --- !u!23 &-6465311776425329196
 MeshRenderer:
@@ -117,3 +119,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &8015005385306089034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620943185010829401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa33d5f955da047f2adf6d9e0381b11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1712864234620563187}
   - component: {fileID: 1712864234620563184}
   - component: {fileID: 1712864234620563185}
+  - component: {fileID: -6714528462188958175}
   m_Layer: 0
   m_Name: GaseousPlanet
   m_TagString: Untagged
@@ -109,11 +110,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74677e6ab4cde4aadb07a0ecfc0595fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 0
-  radius: 0
   revolutionSpeed: 20
   rotationSpeed: 15
   fixedStarPosition: {x: 0, y: 0, z: 0}
   distanceBetweenFixedStar: 5.53
-  planetTag: []
-  resource: 0
+  orbit: {fileID: 0}
+  planetType: {fileID: 0}
+  planetElements: []
+  planetCorrectionTag: []
+  remainResource: 0
+  parent: {fileID: 0}
+--- !u!114 &-6714528462188958175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712864234620563190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa33d5f955da047f2adf6d9e0381b11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
