@@ -21,20 +21,24 @@ public class PlanetsFactorySO : ScriptableObject
     /// <returns></returns>
     public Planet createPlanet(PlanetTypeSO planetType,Vector3 fixedStarPosition, float distance, Transform stars, int planetResource)
     {
-        
-
+        Planet planet;
         if (planetTypes[1] == planetType)
         {
             initializationAttribute(planetPrefabs[1], fixedStarPosition, distance, planetType,stars, planetResource);
-            return Instantiate(planetPrefabs[1]);
+            planet =  Instantiate(planetPrefabs[1]);
         }
-
         else
         {
             initializationAttribute(planetPrefabs[0], fixedStarPosition, distance, planetType,stars, planetResource);
-            return Instantiate(planetPrefabs[0]);
+            planet = Instantiate(planetPrefabs[0]);
         }
-            
+
+        planet.transform.Translate(fixedStarPosition.x, fixedStarPosition.y, fixedStarPosition.z + distance);
+        planet.transform.parent = stars.transform;
+
+        return planet;
+
+
     }
 
 

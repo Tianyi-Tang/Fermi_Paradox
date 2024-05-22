@@ -64,8 +64,6 @@ public class PlanetarySystemInitialization : MonoBehaviour
         currentPlanetDistance += Random.Range(3, 5);
         int resuorec = Random.Range(400, 1000);
         Planet planet = planetsFactory.createPlanet(planetType[0],planetarySystem.getFixedStar().transform.position,currentPlanetDistance, stars.transform, resuorec);
-        planet.transform.Translate(fixedStar.transform.position.x, fixedStar.transform.position.y, fixedStar.transform.position.z + currentPlanetDistance);
-        planet.transform.parent = stars.transform;
         planetarySystem.addPlanet(planet);
         createOrbit(currentPlanetDistance);
     }
