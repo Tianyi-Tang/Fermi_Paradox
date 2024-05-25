@@ -40,7 +40,6 @@ public class PlanetarySystemInitialization : MonoBehaviour
         }
         FindObjectOfType<PlanetarySystemSpawn>().initializationCompleteNum += 1;
 
-        //addAllPlanetOrbits();
     }
 
     /// <summary>

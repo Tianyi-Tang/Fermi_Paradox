@@ -16,6 +16,7 @@ public class CelestialObjectMoving : MonoBehaviour
         {
             this.revolutionSpeed = revolutionSpeed;
             this.fixedStarPos = fixedStarPos;
+            allDataSet = true;
         }
     }
 

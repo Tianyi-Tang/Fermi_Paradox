@@ -13,6 +13,7 @@ public class Planet : MonoBehaviour
     private float radius; // 1 million km(real) = 1m(unity)
 
     [SerializeField]private LineRenderer orbit;
+    [SerializeField] private CelestialObjectMoving moving;
 
     private PlanetTypeSO planetType;
     private List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据

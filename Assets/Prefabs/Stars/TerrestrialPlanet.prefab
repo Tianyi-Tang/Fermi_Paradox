@@ -55,16 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74677e6ab4cde4aadb07a0ecfc0595fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revolutionSpeed: 20
-  rotationSpeed: 60
-  fixedStarPosition: {x: -9.514336, y: 3, z: -7.726227}
-  distanceBetweenFixedStar: 10
   orbit: {fileID: 0}
-  planetType: {fileID: 11400000, guid: 64ff179d753234557968479403bc582b, type: 2}
-  planetElements: []
-  planetCorrectionTag: []
+  moving: {fileID: 8015005385306089034}
   remainResource: 406
-  parent: {fileID: 0}
 --- !u!23 &-6465311776425329196
 MeshRenderer:
   m_ObjectHideFlags: 0
