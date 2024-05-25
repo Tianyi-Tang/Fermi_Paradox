@@ -24,40 +24,25 @@ public class PlanetsFactorySO : ScriptableObject
         Planet planet;
         if (planetTypes[1] == infor.type)
         {
-            initializationAttribute(planetPrefabs[1], infor.fixStarPosition, infor.distance, infor.type,stars, infor.resource);
+            planetPrefabs[1].setPlanetInfor(infor);
             planet =  Instantiate(planetPrefabs[1]);
         }
         else
         {
-            initializationAttribute(planetPrefabs[0], infor.fixStarPosition, infor.distance, infor.type, stars, infor.resource);
+            planetPrefabs[0].setPlanetInfor(infor);
             planet = Instantiate(planetPrefabs[0]);
         }
 
         planet.transform.Translate(infor.fixStarPosition.x, infor.fixStarPosition.y, infor.fixStarPosition.z + infor.distance);
         planet.transform.parent = stars.transform;
 
+        planet.GetComponent<PlanetMoving>().setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
+
         return planet;
 
 
     }
 
-
-    /// <summary>
-    /// 初始化行星的数据
-    /// </summary>
-    /// <param name="planet">行星自身的reference</param>
-    /// <param name="fixedStarPosition">恒星的位置</param>
-    /// <param name="distance">该行星和恒星之间的距离</param>
-    /// <param name="planetType">行星的种类</param>
-    private void initializationAttribute(Planet planet,Vector3 fixedStarPosition, float distance, PlanetTypeSO planetType,Transform stars, int planetResource)
-    {
-        planet.fixedStarPosition = fixedStarPosition;
-        planet.distanceBetweenFixedStar = distance;
-        planet.planetType = planetType;
-        planet.parent = stars;
-
-        planet.setRemainResourec(planetResource);
-    }
 
      
 
