@@ -40,10 +40,17 @@ public class PlanetsFactorySO : ScriptableObject
 
         return planet;
 
+    }
 
+    public LineRenderer createOrbit(PlanetInfor infor, Transform stars)
+    {
+        GameObject gol = new GameObject { name = "Circle" };
+        gol.transform.position = infor.fixStarPosition;
+        gol.DrawCircle(infor.distance, 0.2f, stars);
+        return gol.GetComponent<LineRenderer>();
     }
 
 
-     
+
 
 }

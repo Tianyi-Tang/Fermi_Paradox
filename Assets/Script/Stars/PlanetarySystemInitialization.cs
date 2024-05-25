@@ -72,18 +72,11 @@ public class PlanetarySystemInitialization : MonoBehaviour
         infor.revolutionSpeed = Random.Range(15, 25);
 
         Planet planet = planetsFactory.createPlanet(infor,stars.transform);
+        LineRenderer renderer = planetsFactory.createOrbit(infor, stars.transform);
+        planetarySystem.addPlanetsOrbits(renderer);
+        renderer.enabled = false;
         planetarySystem.addPlanet(planet);
-        createOrbit(currentPlanetDistance);
-    }
-
-    private void createOrbit(float distanceBetweenFixedStar)
-    {
-        GameObject gol = new GameObject { name = "Circle" };
-        gol.transform.position = fixedStar.transform.position;
-        gol.DrawCircle(distanceBetweenFixedStar, 0.2f, stars.transform);
-        planetarySystem.addPlanetsOrbits(gol.GetComponent<LineRenderer>());
-        gol.GetComponent<LineRenderer>().enabled = false;
-
+        
     }
 
     /// <summary>
