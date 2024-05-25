@@ -37,16 +37,16 @@ public class PlanetsFactorySO : ScriptableObject
         planet.transform.parent = stars.transform;
 
         planet.GetComponent<PlanetMoving>().setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
-
         return planet;
 
     }
 
-    public LineRenderer createOrbit(PlanetInfor infor, Transform stars)
+    public LineRenderer createOrbit(PlanetInfor infor, Transform stars,Planet planet)
     {
         GameObject gol = new GameObject { name = "Circle" };
         gol.transform.position = infor.fixStarPosition;
         gol.DrawCircle(infor.distance, 0.2f, stars);
+        planet.setOrbit(gol.GetComponent<LineRenderer>());
         return gol.GetComponent<LineRenderer>();
     }
 

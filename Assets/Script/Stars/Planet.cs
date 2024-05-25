@@ -21,16 +21,16 @@ public class Planet : MonoBehaviour
 
     [SerializeField]private int remainResource;
 
-    private void Awake()
-    {
-
-    }
-
     public void setPlanetInfor(PlanetInfor infor)
     {
         radius = infor.distance;
         planetType = infor.type;
         remainResource = infor.resource;
+    }
+
+    public void setOrbit(LineRenderer orbit)
+    {
+        this.orbit = orbit;
     }
    
 

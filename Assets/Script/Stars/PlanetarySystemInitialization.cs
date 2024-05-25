@@ -72,7 +72,7 @@ public class PlanetarySystemInitialization : MonoBehaviour
         infor.revolutionSpeed = Random.Range(15, 25);
 
         Planet planet = planetsFactory.createPlanet(infor,stars.transform);
-        LineRenderer renderer = planetsFactory.createOrbit(infor, stars.transform);
+        LineRenderer renderer = planetsFactory.createOrbit(infor, stars.transform,planet);
         planetarySystem.addPlanetsOrbits(renderer);
         renderer.enabled = false;
         planetarySystem.addPlanet(planet);
