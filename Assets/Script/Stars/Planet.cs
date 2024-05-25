@@ -28,30 +28,8 @@ public class Planet : MonoBehaviour
 
     private void Awake()
     {
-    }
 
-    void Update()
-    {
-        revolution();
-        rotation();
     }
-
-    /// <summary>
-    /// 实现行星的公转
-    /// </summary>
-    private void revolution()
-    {
-        transform.RotateAround(fixedStarPosition, Vector3.up, Time.deltaTime * revolutionSpeed);
-    }
-
-    /// <summary>
-    /// 实现星球的自转
-    /// </summary>
-    private void rotation()
-    {
-        transform.Rotate(Vector3.up, Time.deltaTime * rotationSpeed);
-    }
-
    
 
     public float getMass()
