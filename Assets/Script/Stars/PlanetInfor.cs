@@ -9,4 +9,5 @@ public class PlanetInfor
     public float distance;
     public float rotationSpeed;
     public float revolutionSpeed;
+    public int resource;
 }

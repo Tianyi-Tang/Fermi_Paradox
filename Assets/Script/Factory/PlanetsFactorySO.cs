@@ -19,21 +19,21 @@ public class PlanetsFactorySO : ScriptableObject
     /// <param name="fixedStarPosition">该行星系的恒星位置</param>
     /// <param name="distance">该行星和恒星之间的距离</param>
     /// <returns></returns>
-    public Planet createPlanet(PlanetTypeSO planetType,Vector3 fixedStarPosition, float distance, Transform stars, int planetResource)
+    public Planet createPlanet(PlanetInfor infor ,Transform stars)
     {
         Planet planet;
-        if (planetTypes[1] == planetType)
+        if (planetTypes[1] == infor.type)
         {
-            initializationAttribute(planetPrefabs[1], fixedStarPosition, distance, planetType,stars, planetResource);
+            initializationAttribute(planetPrefabs[1], infor.fixStarPosition, infor.distance, infor.type,stars, infor.resource);
             planet =  Instantiate(planetPrefabs[1]);
         }
         else
         {
-            initializationAttribute(planetPrefabs[0], fixedStarPosition, distance, planetType,stars, planetResource);
+            initializationAttribute(planetPrefabs[0], infor.fixStarPosition, infor.distance, infor.type, stars, infor.resource);
             planet = Instantiate(planetPrefabs[0]);
         }
 
-        planet.transform.Translate(fixedStarPosition.x, fixedStarPosition.y, fixedStarPosition.z + distance);
+        planet.transform.Translate(infor.fixStarPosition.x, infor.fixStarPosition.y, infor.fixStarPosition.z + infor.distance);
         planet.transform.parent = stars.transform;
 
         return planet;

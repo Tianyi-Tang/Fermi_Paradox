@@ -61,9 +61,18 @@ public class PlanetarySystemInitialization : MonoBehaviour
     /// </summary>
     private void creatPlanets()
     {
+        PlanetInfor infor = new PlanetInfor();
+        infor.type = planetType[0];
+        infor.fixStarPosition = fixedStar.transform.position;
+
         currentPlanetDistance += Random.Range(3, 5);
-        int resuorec = Random.Range(400, 1000);
-        Planet planet = planetsFactory.createPlanet(planetType[0],planetarySystem.getFixedStar().transform.position,currentPlanetDistance, stars.transform, resuorec);
+        infor.distance = currentPlanetDistance;
+
+        infor.resource = Random.Range(400, 1000);
+        infor.rotationSpeed = Random.Range(45,65);
+        infor.revolutionSpeed = Random.Range(15, 25);
+
+        Planet planet = planetsFactory.createPlanet(infor,stars.transform);
         planetarySystem.addPlanet(planet);
         createOrbit(currentPlanetDistance);
     }
