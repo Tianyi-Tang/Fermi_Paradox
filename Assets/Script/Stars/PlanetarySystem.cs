@@ -8,7 +8,6 @@ using UnityEngine;
 public class PlanetarySystem : MonoBehaviour
 {
     [SerializeField]private List<Planet> planets;
-    [SerializeField]private List<LineRenderer> planetOrbits;
     [SerializeField]private FixedStar fixedStar;
 
     [SerializeField]private CivilizationSO planetarySystemOwner;
@@ -46,12 +45,7 @@ public class PlanetarySystem : MonoBehaviour
     {
         foreach (Planet planet in planets)
         {
-            planet.GetComponent<MeshRenderer>().enabled = false;
-        }
-
-        foreach (LineRenderer planetOrbit in planetOrbits)
-        {
-            planetOrbit.enabled = false;
+            planet.setVisible(false);
         }
     }
 
@@ -62,12 +56,7 @@ public class PlanetarySystem : MonoBehaviour
     {
         foreach (Planet planet in planets)
         {
-            planet.GetComponent<MeshRenderer>().enabled = true;
-        }
-
-        foreach (LineRenderer planetOrbit in planetOrbits)
-        {
-            planetOrbit.enabled = true;
+            planet.setVisible(true);
         }
     }
 
@@ -138,11 +127,6 @@ public class PlanetarySystem : MonoBehaviour
         if (planetarySystemOwner != null)
             return true;
         return false;
-    }
-
-    public void addPlanetsOrbits(LineRenderer planetOrbit)
-    {
-        this.planetOrbits.Add(planetOrbit);
     }
 
     public List<Planet> GetPlanets()

@@ -43,19 +43,6 @@ public class PlanetarySystemInitialization : MonoBehaviour
     }
 
     /// <summary>
-    /// 将该行星系的所有星球轨道添加到 planetarySystem 中
-    /// </summary>
-    private void addAllPlanetOrbits()
-    {
-        for (int i = 0; i < stars.transform.childCount; i++)
-        {
-            LineRenderer orbit = stars.transform.GetChild(i).GetComponent<LineRenderer>();
-            if (orbit != null)
-                planetarySystem.addPlanetsOrbits(orbit);
-        }
-    }
-
-    /// <summary>
     /// 通过PlanetsFactorySo提供的方式创造行星，并将行星系设置为行星parent
     /// </summary>
     private void creatPlanets()
@@ -72,9 +59,7 @@ public class PlanetarySystemInitialization : MonoBehaviour
         infor.revolutionSpeed = Random.Range(15, 25);
 
         Planet planet = planetsFactory.createPlanet(infor,stars.transform);
-        LineRenderer renderer = planetsFactory.createOrbit(infor, stars.transform,planet);
-        planetarySystem.addPlanetsOrbits(renderer);
-        renderer.enabled = false;
+        planetsFactory.createOrbit(infor, stars.transform,planet);
         planetarySystem.addPlanet(planet);
         
     }

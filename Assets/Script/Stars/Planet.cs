@@ -32,7 +32,13 @@ public class Planet : MonoBehaviour
     {
         this.orbit = orbit;
     }
-   
+
+    public void setVisible(bool visible)
+    {
+        this.GetComponent<MeshRenderer>().enabled = visible;
+        orbit.enabled = visible;
+        moving.setMoving(!visible);
+    }
 
     public float getMass()
     {

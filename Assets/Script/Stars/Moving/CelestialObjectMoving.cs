@@ -8,6 +8,7 @@ public class CelestialObjectMoving : MonoBehaviour
     protected Vector3 fixedStarPos;
 
     protected bool allDataSet = false;
+    protected bool stop = false;
 
 
     public void setData(float revolutionSpeed, Vector3 fixedStarPos, PlanetsFactorySO factory)
@@ -22,8 +23,13 @@ public class CelestialObjectMoving : MonoBehaviour
 
     private void Update()
     {
-        if (allDataSet)
+        if (allDataSet && !stop)
             revolution();
+    }
+
+    public void setMoving(bool move)
+    {
+        stop = move;
     }
 
     /// <summary>
