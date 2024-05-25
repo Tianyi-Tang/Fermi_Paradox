@@ -15,9 +15,9 @@ public class Planet : MonoBehaviour
     public Vector3 fixedStarPosition;
     [SerializeField]private LineRenderer orbit;
 
-    public PlanetTypeSO planetType;
-    public List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据
-    public List<PlanetCorrectionTagSO> planetCorrectionTag;
+    private PlanetTypeSO planetType;
+    private List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据
+    private List<PlanetCorrectionTagSO> planetCorrectionTag;
 
     [SerializeField]private int remainResource;
 
@@ -26,6 +26,12 @@ public class Planet : MonoBehaviour
     private void Awake()
     {
 
+    }
+
+    public void setPlanetInfor(float radius,PlanetTypeSO type)
+    {
+        radius = this.radius;
+        planetType = type;
     }
    
 
