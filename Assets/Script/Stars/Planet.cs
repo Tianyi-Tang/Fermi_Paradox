@@ -12,7 +12,6 @@ public class Planet : MonoBehaviour
     private float mass;
     private float radius; // 1 million km(real) = 1m(unity)
 
-    public Vector3 fixedStarPosition;
     [SerializeField]private LineRenderer orbit;
 
     private PlanetTypeSO planetType;
@@ -21,17 +20,16 @@ public class Planet : MonoBehaviour
 
     [SerializeField]private int remainResource;
 
-    public Transform parent;
-
     private void Awake()
     {
 
     }
 
-    public void setPlanetInfor(float radius,PlanetTypeSO type)
+    public void setPlanetInfor(PlanetInfor infor)
     {
-        radius = this.radius;
-        planetType = type;
+        radius = infor.distance;
+        planetType = infor.type;
+        remainResource = infor.resource;
     }
    
 
