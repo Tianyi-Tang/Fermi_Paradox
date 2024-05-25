@@ -11,11 +11,8 @@ public class Planet : MonoBehaviour
 
     private float mass;
     private float radius; // 1 million km(real) = 1m(unity)
-    [SerializeField]private float revolutionSpeed;
-    public float rotationSpeed;
 
     public Vector3 fixedStarPosition;
-    public float distanceBetweenFixedStar; // 1 million km(real) = 1m(unity)
     [SerializeField]private LineRenderer orbit;
 
     public PlanetTypeSO planetType;
@@ -52,15 +49,6 @@ public class Planet : MonoBehaviour
         this.radius = radius;
     }
 
-    public void setRevolutionSpeed(float revolutionSpeed)
-    {
-        this.revolutionSpeed = revolutionSpeed;
-    }
-
-    public void setRotationSpeed(float rotationSpeed)
-    {
-        this.rotationSpeed = rotationSpeed;
-    }
 
     public int reduceResource(int exploitedResource)
     {
