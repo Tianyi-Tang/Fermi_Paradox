@@ -6,20 +6,24 @@ using UnityEngine;
 /// 储存行星的数据；控制行星的自转，公转和显示轨道
 /// </summary>
 /// <remarks>Andy 25/08/21</remarks>
-public class Planet : MonoBehaviour
+public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControllable
 {
 
     private float mass;
     private float radius; // 1 million km(real) = 1m(unity)
 
-    [SerializeField]private LineRenderer orbit;
+    [SerializeField] private LineRenderer orbit;
     [SerializeField] private CelestialObjectMoving moving;
 
     private PlanetTypeSO planetType;
     private List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据
     private List<PlanetCorrectionTagSO> planetCorrectionTag;
 
-    [SerializeField]private int remainResource;
+    [SerializeField] private int remainResource;
+
+    public LineRenderer Orbit { set => orbit = value; }
+
+    public PlanetMoving PlanetMoving { get => PlanetMoving; }
 
     public void setPlanetInfor(PlanetInfor infor)
     {

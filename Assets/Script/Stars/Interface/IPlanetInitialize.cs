@@ -6,5 +6,7 @@ public interface IPlanetInitialize
 {
     public LineRenderer Orbit { set; }
 
+    public PlanetMoving PlanetMoving { get; }
+
     public void setPlanetInfor(PlanetInfor infor);
 }
