@@ -21,7 +21,7 @@ public class PlanetsFactorySO : ScriptableObject
     /// <returns></returns>
     public Planet createPlanet(PlanetInfor infor ,Transform stars)
     {
-        Planet planet;
+        IPlanetInitialize planet;
         if (planetTypes[1] == infor.type)
         {
             planet = Instantiate(planetPrefabs[1]);
@@ -31,22 +31,19 @@ public class PlanetsFactorySO : ScriptableObject
             planet = Instantiate(planetPrefabs[0]);
         }
 
-        //planet.transform.Translate(infor.fixStarPosition.x, infor.fixStarPosition.y, infor.fixStarPosition.z + infor.distance);
-        //planet.transform.parent = stars.transform;
-
-        planet.GetComponent<PlanetMoving>().setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
+        planet.PlanetMoving.setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
         createOrbit(infor, stars, planet);
         planet.setPlanetPos(infor.fixStarPosition, stars,infor.distance);
-        return planet;
+        return (Planet) planet;
 
     }
 
-    private void createOrbit(PlanetInfor infor, Transform stars,Planet planet)
+    private void createOrbit(PlanetInfor infor, Transform stars,IPlanetInitialize planet)
     {
         GameObject gol = new GameObject { name = "Circle" };
         gol.transform.position = infor.fixStarPosition;
         gol.DrawCircle(infor.distance, 0.2f, stars);
-        planet.setOrbit(gol.GetComponent<LineRenderer>());
+        planet.Orbit = gol.GetComponent<LineRenderer>();
     }
 
 

@@ -13,7 +13,7 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
     private float radius; // 1 million km(real) = 1m(unity)
 
     [SerializeField] private LineRenderer orbit;
-    [SerializeField] private CelestialObjectMoving moving;
+    [SerializeField] private PlanetMoving moving;
 
     private PlanetTypeSO planetType;
     private List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据
@@ -23,18 +23,12 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
 
     public LineRenderer Orbit { set => orbit = value; }
 
-    public PlanetMoving PlanetMoving { get => PlanetMoving; }
+    public PlanetMoving PlanetMoving { get => moving; }
 
     public void setPlanetInfor(PlanetInfor infor)
     {
         planetType = infor.type;
         remainResource = infor.resource;
-    }
-
-
-    public void setOrbit(LineRenderer orbit)
-    {
-        this.orbit = orbit;
     }
 
     public void setVisible(bool visible)
