@@ -9,4 +9,6 @@ public interface IPlanetInitialize
     public PlanetMoving PlanetMoving { get; }
 
     public void setPlanetInfor(PlanetInfor infor);
+
+    public void setPlanetPos(Vector3 fixedStar, Transform stars,float distance);
 }

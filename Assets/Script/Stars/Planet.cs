@@ -27,10 +27,10 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
 
     public void setPlanetInfor(PlanetInfor infor)
     {
-        radius = infor.distance;
         planetType = infor.type;
         remainResource = infor.resource;
     }
+
 
     public void setOrbit(LineRenderer orbit)
     {
@@ -42,6 +42,13 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         this.GetComponent<MeshRenderer>().enabled = visible;
         orbit.enabled = visible;
         moving.setMoving(!visible);
+    }
+
+    public void setPlanetPos(Vector3 fixedStar, Transform stars,float distance)
+    {
+        radius = distance;
+        this.transform.Translate(fixedStar.x, fixedStar.y, fixedStar.z + radius);
+        this.transform.parent = stars.transform;
     }
 
     public float getMass()
@@ -86,5 +93,5 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         remainResource = intialResourec;
     }
 
-   
+    
 }
