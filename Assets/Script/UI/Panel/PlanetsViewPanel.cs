@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetsViewPanel : BasePanel
+public class PlanetsViewPanel : BasePanel,IPlanetGetter
 {
 
     [SerializeField] private List<RenderTexture> planetViewTextures;
@@ -38,6 +38,11 @@ public class PlanetsViewPanel : BasePanel
     {
         currentPlanets = currentSystem.GetPlanets();
         planetarySystem = currentSystem;
+    }
+
+    public void dddPlanet(Planet planet)
+    {
+        currentPlanets.Add(planet);
     }
 
     /// <summary>
@@ -98,5 +103,5 @@ public class PlanetsViewPanel : BasePanel
         planetarySystem.SetColony(planet,planetBuilding);
     }
 
-
+    
 }
