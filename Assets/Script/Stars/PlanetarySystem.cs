@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PlanetarySystem : MonoBehaviour
 {
-    [SerializeField]private List<Planet> planets;
+    [SerializeField]private List<IPlanetarySystemControllable> planets = new List<IPlanetarySystemControllable>();
     [SerializeField]private FixedStar fixedStar;
 
     [SerializeField]private CivilizationSO planetarySystemOwner;
@@ -23,7 +23,6 @@ public class PlanetarySystem : MonoBehaviour
     private void Start()
     {
         scienceDevelopment = GameParameterContainer.instance.getScienceDevelopmentSpeed();
-        starsInvisible();
     }
 
     // Update is called once per frame
@@ -43,7 +42,7 @@ public class PlanetarySystem : MonoBehaviour
     /// </summary>
     public void starsInvisible()
     {
-        foreach (Planet planet in planets)
+        foreach (IPlanetarySystemControllable planet in planets)
         {
             planet.setVisible(false);
         }
@@ -54,7 +53,7 @@ public class PlanetarySystem : MonoBehaviour
     /// </summary>
     public void starsVisible()
     {
-        foreach (Planet planet in planets)
+        foreach (IPlanetarySystemControllable planet in planets)
         {
             planet.setVisible(true);
         }
@@ -131,7 +130,7 @@ public class PlanetarySystem : MonoBehaviour
 
     public void GetPlanets(IPlanetGetter getter)
     {
-        foreach(Planet planet in planets)
+        foreach(IPlanetarySystemControllable planet in planets)
         {
             planet.addPlanetToGetter(getter);
         }
@@ -142,7 +141,7 @@ public class PlanetarySystem : MonoBehaviour
         return planets.Count;
     }
 
-    public void addPlanet(Planet planet)
+    public void addPlanet(IPlanetarySystemControllable planet)
     {
         planets.Add(planet);
     }

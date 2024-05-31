@@ -19,7 +19,7 @@ public class PlanetsFactorySO : ScriptableObject
     /// <param name="fixedStarPosition">该行星系的恒星位置</param>
     /// <param name="distance">该行星和恒星之间的距离</param>
     /// <returns></returns>
-    public Planet createPlanet(PlanetInfor infor ,Transform stars)
+    public IPlanetarySystemControllable createPlanet(PlanetInfor infor ,Transform stars)
     {
         IPlanetInitialize planet;
         if (planetTypes[1] == infor.type)
@@ -34,7 +34,7 @@ public class PlanetsFactorySO : ScriptableObject
         planet.PlanetMoving.setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
         createOrbit(infor, stars, planet);
         planet.setPlanetPos(infor.fixStarPosition, stars,infor.distance);
-        return (Planet) planet;
+        return (IPlanetarySystemControllable) planet;
 
     }
 

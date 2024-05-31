@@ -58,7 +58,8 @@ public class PlanetarySystemInitialization : MonoBehaviour
         infor.rotationSpeed = Random.Range(45,65);
         infor.revolutionSpeed = Random.Range(15, 25);
 
-        Planet planet = planetsFactory.createPlanet(infor,stars.transform);
+        IPlanetarySystemControllable planet = planetsFactory.createPlanet(infor,stars.transform);
+        planet.setVisible(false);
         planetarySystem.addPlanet(planet);
         
     }
