@@ -50,16 +50,6 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         getter.dddPlanet(this);
     }
 
-    public float getMass()
-    {
-        return mass;
-    }
-
-    public void setMass(float mass)
-    {
-        this.mass = mass;
-    }
-
     public float getRadius()
     {
         return radius;
