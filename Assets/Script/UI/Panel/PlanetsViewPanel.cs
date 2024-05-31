@@ -11,7 +11,7 @@ public class PlanetsViewPanel : BasePanel,IPlanetGetter
     private LoopListView viewMaker;
     private List<PlanetInforElement> planetInforElements = new List<PlanetInforElement>();
 
-    private List<Planet> currentPlanets;
+    private List<Planet> currentPlanets = new List<Planet>();
     private PlanetarySystem planetarySystem;
 
     
@@ -36,7 +36,7 @@ public class PlanetsViewPanel : BasePanel,IPlanetGetter
 
     private void setCurrentSystem(PlanetarySystem currentSystem)
     {
-        currentPlanets = currentSystem.GetPlanets();
+        currentSystem.GetPlanets(this);
         planetarySystem = currentSystem;
     }
 

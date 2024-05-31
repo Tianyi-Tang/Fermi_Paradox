@@ -129,9 +129,12 @@ public class PlanetarySystem : MonoBehaviour
         return false;
     }
 
-    public List<Planet> GetPlanets()
+    public void GetPlanets(IPlanetGetter getter)
     {
-        return planets;
+        foreach(Planet planet in planets)
+        {
+            planet.addPlanetToGetter(getter);
+        }
     }
 
     public int getPlanetsNum()
