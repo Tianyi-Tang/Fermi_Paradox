@@ -45,6 +45,11 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         this.transform.parent = stars.transform;
     }
 
+    public void addPlanetToGetter(IPlanetGetter getter)
+    {
+        getter.dddPlanet(this);
+    }
+
     public float getMass()
     {
         return mass;

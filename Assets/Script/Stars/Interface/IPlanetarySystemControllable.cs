@@ -5,5 +5,7 @@ using UnityEngine;
 public interface IPlanetarySystemControllable
 {
     public void setVisible(bool visible);
+
+    public void addPlanetToGetter(IPlanetGetter getter);
     
 }
