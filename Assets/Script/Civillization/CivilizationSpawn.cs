@@ -41,6 +41,15 @@ public class CivilizationSpawn : MonoBehaviour
         }
     }
 
+    public void wakeSpawn(List<PlanetarySystem> planetarySystems,GameInitializeController controller)
+    {
+        if(controller != null && !this.enabled)
+        {
+            this.planetarySystems = planetarySystems;
+            this.enabled = true;
+        }
+    }
+
     /// <summary>
     /// 初始化 文明的 CivilBasicInforSO 中储存数值的 Dictionary
     /// </summary>
