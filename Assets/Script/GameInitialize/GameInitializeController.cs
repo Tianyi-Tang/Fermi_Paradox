@@ -25,5 +25,10 @@ public class GameInitializeController : MonoBehaviour
         return infor;
     }
 
+    public void awakePlanetarySpawner(List<SmallSegmentae> segmentaes)
+    {
+        planetary.wakeSpanwer(segmentaes, this);
+    }
+
 
 }
