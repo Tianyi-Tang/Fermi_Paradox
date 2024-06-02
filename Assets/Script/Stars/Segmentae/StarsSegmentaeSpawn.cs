@@ -30,8 +30,7 @@ public class StarsSegmentaeSpawn : MonoBehaviour
         initialLargeSegmentaes();
 
         PlanetarySystemSpawn spawner = FindObjectOfType<PlanetarySystemSpawn>();
-        spawner.starsSegmentaes = smallest_segmentaes;
-        spawner.enabled = true;
+        controller.awakePlanetarySpawner(smallest_segmentaes);
 
         SpawnInstance = this;
     }
