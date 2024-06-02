@@ -100,8 +100,8 @@ public class PlanetsViewPanel : BasePanel,IPlanetGetter
 
     public void addColonyToPlanet(Planet planet, PlanetBuildingSO planetBuilding)
     {
-        planetarySystem.SetColony(planet,planetBuilding);
+        planetarySystem.SetColony(planet, planetBuilding);
     }
 
-    
+
 }

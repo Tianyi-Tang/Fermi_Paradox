@@ -47,7 +47,7 @@ public class PlanetarySystem_MainMenuPanel : BasePanel
         UIManager.Instance.pushPanel(panelType);
     }
 
-    public void setCurrentPlanetarySystem(PlanetarySystem planetarySystem) 
+    public void setCurrentPlanetarySystem(PlanetarySystem planetarySystem)
     {
         currentPlanetarySystem = planetarySystem;
     }

@@ -62,7 +62,7 @@ public class PlanetarySystem : MonoBehaviour
     public void SetColony(Planet planet, PlanetBuildingSO planetBuilding)
     {
         Colony colony = planet.gameObject.AddComponent<Colony>();
-        colony.setBuilding(planetBuilding);
+    colony.setBuilding(planetBuilding);
     }
 
     /// <summary>
@@ -180,13 +180,13 @@ public class PlanetarySystem : MonoBehaviour
         return fleets;
     }
 
-    //public CivilArchivesSO getCivilArchives()
-    //{
-    //    if (planetarySystemOwner == null)
-    //        return null;
-    //    else
-    //        return planetarySystemOwner.GetCivilArchives();
-    //}
+    public CivilArchivesSO getCivilArchives()
+    {
+        if (planetarySystemOwner == null)
+            return null;
+        else
+            return planetarySystemOwner.GetCivilArchives();
+    }
 
     public CivilizationSO getPlanetarySystemOwner()
     {
