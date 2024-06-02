@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameInitializeController : MonoBehaviour
 {
-    private StarsSegmentaeSpawn segmentae;
-    private PlanetarySystemInitialization planetary;
-    private CivilizationSpawn civilization;
+    [SerializeField] private StarsSegmentaeSpawn segmentae;
+    [SerializeField] private PlanetarySystemSpawn planetary;
+    [SerializeField] private CivilizationSpawn civilization;
 
 
     // Start is called before the first frame update

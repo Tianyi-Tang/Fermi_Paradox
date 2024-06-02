@@ -25,7 +25,7 @@ public class StarsSegmentaeSpawn : MonoBehaviour
 
     private List<StarsSegmentae> biggest_segmentaes = new List<StarsSegmentae>();
     
-    private void Awake()
+    private void Start()
     {
         initialLargeSegmentaes();
 
