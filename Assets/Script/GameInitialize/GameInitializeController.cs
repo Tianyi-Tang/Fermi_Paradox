@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class GameInitializeController : MonoBehaviour
 {
-    private StarsSegmentaeSpawn segmenta;
+    private StarsSegmentaeSpawn segmentae;
     private PlanetarySystemInitialization planetary;
     private CivilizationSpawn civilization;
-
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        segmentae.wakeSpanwer(createSegmentumInfor(), this);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private SegmentumInfor createSegmentumInfor()
     {
-        
+        SegmentumInfor infor = new SegmentumInfor();
+        infor.largeSegmentaeNum = 1;
+        infor.middleContinedLarge = 1;
+        infor.smallContinedmiddlle = 1;
+        return infor;
     }
+
+
 }

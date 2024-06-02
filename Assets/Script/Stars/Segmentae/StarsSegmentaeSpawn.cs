@@ -36,7 +36,7 @@ public class StarsSegmentaeSpawn : MonoBehaviour
         SpawnInstance = this;
     }
 
-    public void createSegmentums(SegmentumInfor infor,GameInitializeController controller)
+    public void wakeSpanwer(SegmentumInfor infor,GameInitializeController controller)
     {
         if(controller != null && !this.enabled)
         {
