@@ -12,6 +12,7 @@ public class PlanetarySystemSpawn : MonoBehaviour
     [SerializeField] private int planetarySystemNum;
 
     [SerializeField] private CivilizationSpawn civilizationSpawn;
+    private GameInitializeController controller;
 
     public List<SmallSegmentae> starsSegmentaes;
     public int initializationCompleteNum = 0;
@@ -40,6 +41,16 @@ public class PlanetarySystemSpawn : MonoBehaviour
             yield return null;
         
         civilizationSpawn.enabled = true;
+    }
+
+    public void wakeSpanwer(List<SmallSegmentae> segmentaes, GameInitializeController controller)
+    {
+        if(controller != null && !this.enabled)
+        {
+            starsSegmentaes = segmentaes;
+            this.controller = controller;
+            this.enabled = true;
+        }
     }
 
     /// <summary>
