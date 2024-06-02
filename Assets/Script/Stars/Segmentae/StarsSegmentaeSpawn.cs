@@ -19,6 +19,8 @@ public class StarsSegmentaeSpawn : MonoBehaviour
     [SerializeField] private List<ScaleOfSegmentaeSO> segmentaeScales;
     [SerializeField] private List<SegmentaeAreaSO> segmentaeAreas;
 
+    private GameInitializeController controller;
+
     private List<SmallSegmentae> smallest_segmentaes = new List<SmallSegmentae>();
 
     private List<StarsSegmentae> biggest_segmentaes = new List<StarsSegmentae>();
@@ -32,6 +34,18 @@ public class StarsSegmentaeSpawn : MonoBehaviour
         spawner.enabled = true;
 
         SpawnInstance = this;
+    }
+
+    public void createSegmentums(SegmentumInfor infor,GameInitializeController controller)
+    {
+        if(controller != null && !this.enabled)
+        {
+            largeSegmentaeNum = infor.largeSegmentaeNum;
+            middleContinedLarge = infor.middleContinedLarge;
+            smallContinedmiddlle = infor.smallContinedmiddlle;
+            this.controller = controller;
+            this.enabled = true;
+        }
     }
 
 
