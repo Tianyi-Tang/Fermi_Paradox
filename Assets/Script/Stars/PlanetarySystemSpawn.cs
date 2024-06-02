@@ -14,7 +14,8 @@ public class PlanetarySystemSpawn : MonoBehaviour
     [SerializeField] private CivilizationSpawn civilizationSpawn;
     private GameInitializeController controller;
 
-    public List<SmallSegmentae> starsSegmentaes;
+    private List<SmallSegmentae> starsSegmentaes;
+    private List<PlanetarySystem> planetarySystems = new List<PlanetarySystem>();
     public int initializationCompleteNum = 0;
 
 
@@ -27,6 +28,7 @@ public class PlanetarySystemSpawn : MonoBehaviour
             for (int j = 0; j < planetarySystemNum; j++)
             {
                 PlanetarySystem planetary = createPlanetarySystem(ensurePosition(planetarySystemList, planetarySystemPos, starsSegmentaes[i]), starsSegmentaes[i]);
+                planetarySystems.Add(planetary);
                 starsSegmentaes[i].addPlanetarySystem(planetary);
             }
         }
@@ -37,9 +39,11 @@ public class PlanetarySystemSpawn : MonoBehaviour
 
     IEnumerator activeCivilizationSpawn()
     {
+        
         while (initializationCompleteNum != starsSegmentaes.Count * planetarySystemNum)
             yield return null;
-        
+
+        controller.awakeCivilizationSpawn(planetarySystems);
         civilizationSpawn.enabled = true;
     }
 
