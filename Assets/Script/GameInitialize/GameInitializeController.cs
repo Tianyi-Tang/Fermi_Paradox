@@ -30,5 +30,10 @@ public class GameInitializeController : MonoBehaviour
         planetary.wakeSpanwer(segmentaes, this);
     }
 
+    public void awakeCivilizationSpawn(List<PlanetarySystem> planetarySystems)
+    {
+        civilization.wakeSpawn(planetarySystems, this);
+    }
+
 
 }
