@@ -116,7 +116,6 @@ public class CivilizationSpawn : MonoBehaviour
     {
         int num = Random.Range(0, planetarySystems.Count);
         planetarySystems[num].occupy(civilization);
-        //planetarySystems[num].setFleets(fleets);//测试使用
         planetarySystems.Remove(planetarySystems[num]);
     }
 
@@ -143,11 +142,6 @@ public class CivilizationSpawn : MonoBehaviour
     private bool playerCivilization(CivilizationSO civilization)
     {
         return civilization.getPlayControl();
-    }
-
-    public void setPlanetarySystems(PlanetarySystem planetaries)
-    {
-        planetarySystems.Add(planetaries);
     }
 
     private void sendPlayerCivilization(CivilizationSO playerCivilization)

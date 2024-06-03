@@ -65,7 +65,6 @@ public class PlanetarySystemSpawn : MonoBehaviour
         int planetNum = Random.Range(1,4);
         PlanetarySystemInitialization planetarySystem = planetarySystemFactory.createPlanetarySystem(planetNum, planetarySystemPos);
         planetarySystem.transform.SetParent(currentSegmentae.transform,false);
-        civilizationSpawn.setPlanetarySystems(planetarySystem.GetComponent<PlanetarySystem>());
 
         return planetarySystem.GetComponent<PlanetarySystem>();
     }

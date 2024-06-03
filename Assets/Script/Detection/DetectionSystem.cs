@@ -23,6 +23,15 @@ public class DetectionSystem : MonoBehaviour
         detectNearbyPlanetarySystem();
     }
 
+    public void setCivilzation(CivilizationSO civilzation)
+    {
+        if(civilzation == null)
+        {
+            this.enabled = true;
+        }
+        this.civilzation = civilzation;
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         
