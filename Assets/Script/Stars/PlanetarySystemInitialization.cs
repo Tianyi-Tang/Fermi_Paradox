@@ -28,7 +28,7 @@ public class PlanetarySystemInitialization : MonoBehaviour
     private void Awake()
     {
         creatFixedStar();
-        
+        planetarySystem.setPlanetsNum(planetNum);
     }
 
     private void Start()
