@@ -59,12 +59,6 @@ public class PlanetarySystem : MonoBehaviour
         }
     }
 
-    public void SetColony(Planet planet, PlanetBuildingSO planetBuilding)
-    {
-        Colony colony = planet.gameObject.AddComponent<Colony>();
-    colony.setBuilding(planetBuilding);
-    }
-
     /// <summary>
     /// 执行文明占领行星的行为
     /// </summary>
