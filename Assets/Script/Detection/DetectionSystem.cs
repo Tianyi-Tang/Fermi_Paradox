@@ -12,20 +12,18 @@ public class DetectionSystem : MonoBehaviour
 
     private float concealmentParameter;
 
-    private CivilizationSO civilzation;
+    [SerializeField]private CivilizationSO civilzation;
 
     private void Start()
     {
         DetectionManager.DetectionInstance.OnSendingConcealmentParameter += setConcealmentParameter;
-
-        civilzation = this.GetComponent<PlanetarySystem>().getPlanetarySystemOwner();
 
         detectNearbyPlanetarySystem();
     }
 
     public void setCivilzation(CivilizationSO civilzation)
     {
-        if(civilzation == null)
+        if(!this.enabled)
         {
             this.enabled = true;
         }
