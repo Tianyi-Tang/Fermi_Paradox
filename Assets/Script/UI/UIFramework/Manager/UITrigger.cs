@@ -71,7 +71,7 @@ public class UITrigger : MonoBehaviour
         if (clickObj == null)
             return false;
         else
-            return clickObj.GetComponent<PlanetarySystem>().getPlayControl();
+            return clickObj.GetComponent<Colony>().getPlayerControl();
     }
 
 

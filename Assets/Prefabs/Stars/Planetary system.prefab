@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 6662703420428354746}
   - component: {fileID: -318155850199484322}
   - component: {fileID: 7800729515031436298}
+  - component: {fileID: 5477575749214968114}
+  - component: {fileID: 8436070728437174377}
   m_Layer: 0
   m_Name: Planetary system
   m_TagString: Untagged
@@ -58,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662703420428354727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.523155, y: 2, z: 27.137817}
+  m_LocalPosition: {x: -24.517624, y: 0, z: -16.120308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7755704447297366398}
@@ -140,6 +142,33 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8023613239343911793}
   m_Enabled: 1
+--- !u!114 &5477575749214968114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662703420428354727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a04a87581dd4834b1c15dd008696fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetarySystemOwner: {fileID: 0}
+  detection: {fileID: 8436070728437174377}
+--- !u!114 &8436070728437174377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662703420428354727}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1ba7d0bd77b4cad897c1faf69c042a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observationArea_planetarySystems: []
 --- !u!1001 &4629207617613640172
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class CivilizationSpawn : MonoBehaviour
 
     [SerializeField] private List<TechnologySO> initialTechnologies;
 
-    private List<PlanetarySystem> planetarySystems = new List<PlanetarySystem>();
+    private List<Colony> planetarySystems;
 
     [SerializeField] private List<ShipSO> fleets;//临时测试
     
@@ -41,7 +41,7 @@ public class CivilizationSpawn : MonoBehaviour
         }
     }
 
-    public void wakeSpawn(List<PlanetarySystem> planetarySystems,GameInitializeController controller)
+    public void wakeSpawn(List<Colony> planetarySystems,GameInitializeController controller)
     {
         if(controller != null && !this.enabled)
         {

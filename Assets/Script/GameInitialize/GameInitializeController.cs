@@ -32,7 +32,12 @@ public class GameInitializeController : MonoBehaviour
 
     public void awakeCivilizationSpawn(List<PlanetarySystem> planetarySystems)
     {
-        civilization.wakeSpawn(planetarySystems, this);
+        List<Colony> colonies = new List<Colony>();
+        foreach(PlanetarySystem planetarySystem in planetarySystems)
+        {
+            colonies.Add(planetarySystem.GetComponent<Colony>());
+        }
+        civilization.wakeSpawn(colonies, this);
     }
 
 

@@ -11,7 +11,6 @@ public class PlanetarySystem : MonoBehaviour
     [SerializeField]private FixedStar fixedStar;
 
     [SerializeField]private CivilizationSO planetarySystemOwner;
-    private bool playControl = false;
 
     [SerializeField] private List<Ships> fleets;
 
@@ -59,18 +58,18 @@ public class PlanetarySystem : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 执行文明占领行星的行为
-    /// </summary>
-    /// <param name="civilization">占领行星系的文明</param>
-    public void occupy(CivilizationSO civilization)
-    {
-        if (existCivilization())
-            changeCivilization(civilization);
-        else
-            firstOwner(civilization);
-        civilization.addNewPlanetarySystem(this);
-    }
+    ///// <summary>
+    ///// 执行文明占领行星的行为
+    ///// </summary>
+    ///// <param name="civilization">占领行星系的文明</param>
+    //public void occupy(CivilizationSO civilization)
+    //{
+    //    if (existCivilization())
+    //        changeCivilization(civilization);
+    //    else
+    //        firstOwner(civilization);
+    //    civilization.addNewPlanetarySystem(this);
+    //}
 
 
     private void changeCivilization(CivilizationSO civilization)
@@ -79,25 +78,25 @@ public class PlanetarySystem : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// 当该星系第一次被文明占领
-    /// </summary>
-    /// <param name="civilization"></param>
-    private void firstOwner(CivilizationSO civilization)
-    {
-        planetarySystemOwner = civilization;
-        playControl = civilization.getPlayControl();
-        this.gameObject.AddComponent<DetectionSystem>();
+    ///// <summary>
+    ///// 当该星系第一次被文明占领
+    ///// </summary>
+    ///// <param name="civilization"></param>
+    //private void firstOwner(CivilizationSO civilization)
+    //{
+    //    planetarySystemOwner = civilization;
+    //    playControl = civilization.getPlayControl();
+    //    this.gameObject.AddComponent<DetectionSystem>();
 
 
-        if (playControl == true)
-            Invoke("addToDetectionManger", 0.02f);
-    }
+    //    if (playControl == true)
+    //        Invoke("addToDetectionManger", 0.02f);
+    //}
 
-    private void addToDetectionManger()
-    { 
-        DetectionManager.DetectionInstance.addPlayer_detectionSystem(this.GetComponent<DetectionSystem>());
-    }
+    //private void addToDetectionManger()
+    //{ 
+    //    DetectionManager.DetectionInstance.addPlayer_detectionSystem(this.GetComponent<DetectionSystem>());
+    //}
 
 
     /// <summary>
@@ -155,14 +154,14 @@ public class PlanetarySystem : MonoBehaviour
         return civilizationResource;
     }
 
-    /// <summary>
-    /// 该行星系是否被文明占领
-    /// </summary>
-    /// <returns>是/否</returns>
-    public bool getPlayControl()
-    {
-        return playControl;
-    }
+    ///// <summary>
+    ///// 该行星系是否被文明占领
+    ///// </summary>
+    ///// <returns>是/否</returns>
+    //public bool getPlayControl()
+    //{
+    //    return playControl;
+    //}
 
     public void setFleets(List<Ships> fleets)
     {

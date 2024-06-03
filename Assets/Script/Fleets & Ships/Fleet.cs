@@ -71,7 +71,7 @@ public class Fleet : MonoBehaviour
         if (transform.position == destinationPosition)
         {
             move_flag = false;
-            destination.GetComponent<PlanetarySystem>().occupy(civilization);
+            destination.GetComponent<Colony>().occupy(civilization);
             Destroy(gameObject);
         }
             

@@ -9,16 +9,16 @@ public class Colony : MonoBehaviour
 
     [SerializeField] private DetectionSystem detection;
 
-    public void occpy(CivilizationSO civilization)
+    public void occupy(CivilizationSO civilization)
     {
         if(planetarySystemOwner == null)
         {
-            firstOccpy(civilization);
+            firstOccupy(civilization);
         }
         
     }
 
-    private void firstOccpy(CivilizationSO civilization)
+    private void firstOccupy(CivilizationSO civilization)
     {
         planetarySystemOwner = civilization;
         detection.setCivilzation(civilization);
