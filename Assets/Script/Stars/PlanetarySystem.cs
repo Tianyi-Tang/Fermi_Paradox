@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,11 @@ public class PlanetarySystem : MonoBehaviour
     [SerializeField] private List<Ships> fleets;
 
     [SerializeField]private int civilizationResource; //文明在该行星用有的资源
+
+    internal void addPlanet(PlanetaryResourceInitialize planetaryResourceInitialize)
+    {
+        throw new NotImplementedException();
+    }
 
     float timeInterval = 0;
     private GameParameterSO scienceDevelopment;

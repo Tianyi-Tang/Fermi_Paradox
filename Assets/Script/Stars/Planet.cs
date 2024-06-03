@@ -31,18 +31,18 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         remainResource = infor.resource;
     }
 
+    public void setPlanetPos(Vector3 fixedStar, Transform stars, float distance)
+    {
+        radius = distance;
+        this.transform.Translate(fixedStar.x, fixedStar.y, fixedStar.z + radius);
+        this.transform.parent = stars.transform;
+    }
+
     public void setVisible(bool visible)
     {
         this.GetComponent<MeshRenderer>().enabled = visible;
         orbit.enabled = visible;
         moving.setMoving(!visible);
-    }
-
-    public void setPlanetPos(Vector3 fixedStar, Transform stars,float distance)
-    {
-        radius = distance;
-        this.transform.Translate(fixedStar.x, fixedStar.y, fixedStar.z + radius);
-        this.transform.parent = stars.transform;
     }
 
     public void addPlanetToGetter(IPlanetGetter getter)
