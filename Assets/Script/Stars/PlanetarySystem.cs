@@ -10,6 +10,8 @@ public class PlanetarySystem : MonoBehaviour
     [SerializeField]private List<IPlanetarySystemControllable> planets = new List<IPlanetarySystemControllable>();
     [SerializeField]private FixedStar fixedStar;
 
+    private int planetNum = 0;
+
     [SerializeField]private CivilizationSO planetarySystemOwner;
 
     [SerializeField] private List<Ships> fleets;
@@ -29,7 +31,7 @@ public class PlanetarySystem : MonoBehaviour
     {
         if (timeInterval >= 1.0)//每一秒钟执行一次
         {
-            civilizationScienceProgressIncrease();
+            //civilizationScienceProgressIncrease();
 
             timeInterval = 0;
         }
@@ -56,6 +58,20 @@ public class PlanetarySystem : MonoBehaviour
         {
             planet.setVisible(true);
         }
+    }
+
+    public bool allPlanetReady()
+    {
+        if (planets.Count == planetNum)
+            return true;
+        else
+            return false;
+    }
+
+    public void setPlanetsNum(int num)
+    {
+        if (planetNum == 0)
+            planetNum = num;
     }
 
     ///// <summary>
@@ -99,27 +115,27 @@ public class PlanetarySystem : MonoBehaviour
     //}
 
 
-    /// <summary>
-    /// 如果行星系存在文明，则增加文明的科技研发进度
-    /// </summary>
-    private void civilizationScienceProgressIncrease()
-    {
-        if (existCivilization() != false)
-            planetarySystemOwner.GetCivilScience().addScienceProgress( planetarySystemOwner.getGameStats_int(scienceDevelopment));
-    }
+    ///// <summary>
+    ///// 如果行星系存在文明，则增加文明的科技研发进度
+    ///// </summary>
+    //private void civilizationScienceProgressIncrease()
+    //{
+    //    if (existCivilization() != false)
+    //        planetarySystemOwner.GetCivilScience().addScienceProgress( planetarySystemOwner.getGameStats_int(scienceDevelopment));
+    //}
 
 
 
-    /// <summary>
-    /// 判断该行星是否存在文明
-    /// </summary>
-    /// <returns>文明是否存在</returns>
-    public bool existCivilization()
-    {
-        if (planetarySystemOwner != null)
-            return true;
-        return false;
-    }
+    ///// <summary>
+    ///// 判断该行星是否存在文明
+    ///// </summary>
+    ///// <returns>文明是否存在</returns>
+    //public bool existCivilization()
+    //{
+    //    if (planetarySystemOwner != null)
+    //        return true;
+    //    return false;
+    //}
 
     public void GetPlanets(IPlanetGetter getter)
     {
@@ -131,7 +147,7 @@ public class PlanetarySystem : MonoBehaviour
 
     public int getPlanetsNum()
     {
-        return planets.Count;
+        return planetNum;
     }
 
     public void addPlanet(IPlanetarySystemControllable planet)
