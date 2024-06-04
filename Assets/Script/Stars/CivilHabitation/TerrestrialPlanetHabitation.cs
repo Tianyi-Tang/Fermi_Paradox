@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TerrestrialPlanetHabitation : CivilHabitation
 {
-    static int mineDisadv = -1;
+    static int mineAdvase = 1;
 
     public TerrestrialPlanetHabitation(IPlanetResource planet)
     {
@@ -13,7 +13,7 @@ public class TerrestrialPlanetHabitation : CivilHabitation
 
     protected override void recalcuate()
     {
-        finallMineRate = civilMineRate + mineDisadv;
+        finallMineRate = civilMineRate + mineAdvase;
         sendToPlanet();
     }
 }

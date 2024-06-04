@@ -9,11 +9,11 @@ public class GasGiantHabitation : CivilHabitation
         this.planet = planet;
     }
 
-    static int mineAdvase = 1;
+    static int mineDisadv = -1;
 
     protected override void recalcuate()
     {
-       finallMineRate = civilMineRate + mineAdvase;
+       finallMineRate = civilMineRate + mineDisadv;
         sendToPlanet();
     }
 
