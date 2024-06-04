@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CivilHabitationFactory", menuName = "SO/Factory/CivilHabitationFactory")]
 public class CivilHabitationFactorySO : ScriptableObject
 {
-    List<PlanetTypeSO> typeSOs;
+    [SerializeField]List<PlanetTypeSO> typeSOs;
 
     public CivilHabitation createHabition(Planet planet)
     {

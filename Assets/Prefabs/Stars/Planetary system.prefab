@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7800729515031436298}
   - component: {fileID: 5477575749214968114}
   - component: {fileID: 8436070728437174377}
+  - component: {fileID: -4728265834407632552}
   m_Layer: 0
   m_Name: Planetary system
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662703420428354727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.357122, y: 1, z: -2.6687698}
+  m_LocalPosition: {x: -15.460365, y: 0, z: -24.736877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7755704447297366398}
@@ -81,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetarySystem: {fileID: 6662703420428354746}
-  planetNum: 2
+  planetNum: 3
   planetsFactory: {fileID: 11400000, guid: f88e3fcd41749496aa3e20bdf6773ca0, type: 2}
   fixedStarFactory: {fileID: 11400000, guid: 3cdff225499ee4ca7885171449f747f4, type: 2}
   stars: {fileID: 5211903452095334277}
@@ -156,7 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetarySystemOwner: {fileID: 0}
   detection: {fileID: 8436070728437174377}
-  mineRateParameter: {fileID: 0}
 --- !u!114 &8436070728437174377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +171,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   observationArea_planetarySystems: []
   civilzation: {fileID: 0}
+--- !u!114 &-4728265834407632552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662703420428354727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681e5e7d982624bf288b9b87f73dc93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factory: {fileID: 11400000, guid: 30563b7faee314c0c9f1e9344794bb7d, type: 2}
 --- !u!1001 &4629207617613640172
 PrefabInstance:
   m_ObjectHideFlags: 0

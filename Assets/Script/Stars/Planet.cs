@@ -20,7 +20,7 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
     private List<PlanetCorrectionTagSO> planetCorrectionTag;
 
     [SerializeField] private int remainResource;
-    private int reduceValue;
+    private int reduceValue = 0;
 
     public LineRenderer Orbit { set => orbit = value; }
 
@@ -63,8 +63,8 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
             return 0;
         if(remainResource > reduceValue)
         {
-            remainResource -= remainResource;
-            return remainResource;
+            remainResource -= reduceValue;
+            return reduceValue;
         }
         else
         {

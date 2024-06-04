@@ -21,17 +21,17 @@ public class Colony : MonoBehaviour
         {
             firstOccupy(civilization);
         }
-        
+        planetarySystemOwner = civilization;
+        detection.setCivilzation(civilization);
     }
 
     private void firstOccupy(CivilizationSO civilization)
     {
-        planetarySystemOwner = civilization;
-        detection.setCivilzation(civilization);
-        if (civilization.getPlayControl())
-            DetectionManager.DetectionInstance.addPlayer_detectionSystem(detection);
         playerCivil = civilization.getPlayControl();
-        
+        if (playerCivil)
+            DetectionManager.DetectionInstance.addPlayer_detectionSystem(detection);
+
+        gameObject.GetComponent<PlanetaryResourceInitialize>().createCollector(system, civilization);
     }
 
     public bool getPlayerControl()

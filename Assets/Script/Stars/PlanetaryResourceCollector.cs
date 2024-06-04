@@ -16,15 +16,15 @@ public class PlanetaryResourceCollector : MonoBehaviour
 
     public void setCivilization(CivilizationSO civilization)
     {
-        civilMineRate = civilization.getGameStats_int(mineParameter);
         if(this.civilization != null)
         {
             sendToAllHabitation();
         }
         else
         {
-            GameParameterContainer.instance.getIncreaseMiningSpeed();
+            mineParameter = GameParameterContainer.instance.getIncreaseMiningSpeed();
         }
+        civilMineRate = civilization.getGameStats_int(mineParameter);
         this.civilization = civilization;
     }
 
