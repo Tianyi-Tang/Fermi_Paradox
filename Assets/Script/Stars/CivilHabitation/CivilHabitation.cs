@@ -10,6 +10,7 @@ public abstract class CivilHabitation
 
     protected float finallMineRate;
 
+
     public void changeCiviMineRate(float mineRate)
     {
         civilMineRate = mineRate;

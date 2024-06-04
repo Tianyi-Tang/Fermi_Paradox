@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CivilHabitationFactory : MonoBehaviour
+[CreateAssetMenu(fileName = "CivilHabitationFactory", menuName = "SO/Factory/CivilHabitationFactory")]
+public class CivilHabitationFactorySO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    List<PlanetTypeSO> typeSOs;
+
+    public CivilHabitation createHabition(Planet planet)
     {
-        
+        if(planet.getPlanetType() == typeSOs[1])
+        {
+            return new TerrestrialPlanetHabitation(planet);
+        }
+        else
+        {
+            return new GasGiantHabitation(planet);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

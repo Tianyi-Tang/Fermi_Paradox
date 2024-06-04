@@ -8,6 +8,7 @@ public class Colony : MonoBehaviour
     private bool playerCivil;
 
     [SerializeField] private DetectionSystem detection;
+    [SerializeField] private GameParameterSO mineRateParameter;
 
     public void occupy(CivilizationSO civilization)
     {

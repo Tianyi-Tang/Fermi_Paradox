@@ -64,7 +64,7 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
             return -1;
         else
             return Mathf.Abs(remainResource);
-            
+
     }
 
     public float getRemainResource()

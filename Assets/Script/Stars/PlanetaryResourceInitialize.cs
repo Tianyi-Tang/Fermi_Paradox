@@ -6,6 +6,8 @@ public class PlanetaryResourceInitialize : MonoBehaviour,IPlanetGetter
 {
     private HashSet<Planet> allPlanets = new HashSet<Planet>();
 
+    [SerializeField] private CivilHabitationFactorySO factory;
+
     public void createCollector(PlanetarySystem system)
     {
         StartCoroutine(planetsReady(system));
@@ -13,7 +15,9 @@ public class PlanetaryResourceInitialize : MonoBehaviour,IPlanetGetter
 
     public void dddPlanet(Planet planet)
     {
+        factory.createHabition(planet);
         allPlanets.Add(planet);
+
     }
 
     IEnumerator planetsReady(PlanetarySystem system)
