@@ -9,6 +9,7 @@ public class Colony : MonoBehaviour
 
     [SerializeField] private DetectionSystem detection;
     private PlanetarySystem system;
+    private PlanetaryResourceCollector collector;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class Colony : MonoBehaviour
         if (playerCivil)
             DetectionManager.DetectionInstance.addPlayer_detectionSystem(detection);
 
-        gameObject.GetComponent<PlanetaryResourceInitialize>().createCollector(system, civilization);
+        collector = gameObject.GetComponent<PlanetaryResourceInitialize>().createCollector(system, civilization);
     }
 
     public CivilizationSO getPlanetarySystemOwner()

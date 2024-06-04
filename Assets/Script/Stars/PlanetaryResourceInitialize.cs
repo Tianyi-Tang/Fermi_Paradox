@@ -7,11 +7,13 @@ public class PlanetaryResourceInitialize : MonoBehaviour,IPlanetGetter
     [SerializeField] private CivilHabitationFactorySO factory;
     PlanetaryResourceCollector collector;
 
-    public void createCollector(PlanetarySystem system,CivilizationSO civilization)
+    public PlanetaryResourceCollector createCollector(PlanetarySystem system,CivilizationSO civilization)
     {
         collector = gameObject.AddComponent<PlanetaryResourceCollector>();
         collector.setCivilization(civilization);
+
         StartCoroutine(planetsReady(system,collector));
+        return collector;
     }
 
     public void dddPlanet(Planet planet)
