@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPlanetResource
 {
-    public float setRedurceResource{ set; }
+    public int setRedurceResource{ set; }
 
-    public float reduceResource();
+    public int reduceResource();
 }

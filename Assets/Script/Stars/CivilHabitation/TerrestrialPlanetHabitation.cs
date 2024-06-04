@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TerrestrialPlanetHabitation : CivilHabitation
 {
-    static float mineDisadv = -1.0f;
+    static int mineDisadv = -1;
 
     public TerrestrialPlanetHabitation(Planet planet)
     {

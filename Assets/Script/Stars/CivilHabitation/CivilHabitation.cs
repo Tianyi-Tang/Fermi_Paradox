@@ -6,25 +6,15 @@ public abstract class CivilHabitation
 {
     protected Planet planet;
 
-    protected float civilMineRate;
+    protected int civilMineRate;
 
-    protected float finallMineRate;
+    protected int finallMineRate;
 
 
-    public void changeCiviMineRate(float mineRate)
+    public void changeCiviMineRate(int mineRate)
     {
         civilMineRate = mineRate;
         recalcuate();
-    }
-
-    public void setBasicInfor(Planet planet, float mineRate)
-    {
-        if (planet == null)
-        {
-            this.planet = planet;
-            civilMineRate = mineRate;
-        }
-
     }
 
     protected virtual void recalcuate()

@@ -9,7 +9,7 @@ public class GasGiantHabitation : CivilHabitation
         this.planet = planet;
     }
 
-    static float mineAdvase = 1.0f;
+    static int mineAdvase = 1;
 
     protected override void recalcuate()
     {

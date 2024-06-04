@@ -6,7 +6,7 @@ using UnityEngine;
 /// 储存行星的数据；控制行星的自转，公转和显示轨道
 /// </summary>
 /// <remarks>Andy 25/08/21</remarks>
-public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControllable
+public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControllable, IPlanetResource
 {
 
     private float mass;
@@ -20,10 +20,12 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
     private List<PlanetCorrectionTagSO> planetCorrectionTag;
 
     [SerializeField] private int remainResource;
+    private int reduceValue;
 
     public LineRenderer Orbit { set => orbit = value; }
 
     public PlanetMoving PlanetMoving { get => moving; }
+    public int setRedurceResource { set => reduceValue =value; }
 
     public void setPlanetInfor(PlanetInfor infor)
     {
@@ -55,27 +57,21 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
         return planetType;
     }
 
-
-    public int reduceResource(int exploitedResource)
+    public int reduceResource()
     {
-        remainResource -= exploitedResource;
-
-        if (remainResource > 0)
-            return -1;
+        if (remainResource == 0)
+            return 0;
+        if(remainResource > reduceValue)
+        {
+            remainResource -= remainResource;
+            return remainResource;
+        }
         else
-            return Mathf.Abs(remainResource);
-
+        {
+            int temp = remainResource;
+            remainResource = 0;
+            return temp;
+        }
+             
     }
-
-    public float getRemainResource()
-    {
-        return remainResource;
-    }
-
-    public void setRemainResourec(int intialResourec)
-    {
-        remainResource = intialResourec;
-    }
-
-    
 }
