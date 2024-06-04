@@ -29,11 +29,12 @@ public class CivilizationSpawn : MonoBehaviour
         for (int i = 0; i < civilizations.Count; i++)
         {
             resetPlanetarySystem(civilizations[i]);
+            initializeCivilBaseInforDictionary(civilizations[i]);
             resetScienceProgress(civilizations[i]);
             initalPlanetarySystem(civilizations[i]);
             initializationScienceLeve(civilizations[i]);
             initializePlayerInCivilManager(civilizations[i]);
-            initializeCivilBaseInforDictionary(civilizations[i]);
+            
 
             creatCivilState(civilizations[i]);
             initalCivilTechnology(civilizations[i]);
