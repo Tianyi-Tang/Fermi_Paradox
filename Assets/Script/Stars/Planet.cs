@@ -15,12 +15,12 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
     [SerializeField] private LineRenderer orbit;
     [SerializeField] private PlanetMoving moving;
 
-    private PlanetTypeSO planetType;
+    [SerializeField]private PlanetTypeSO planetType;
     private List<PlanetTerraformTagSO> planetElements; //决定星球外观的数据
     private List<PlanetCorrectionTagSO> planetCorrectionTag;
 
     [SerializeField] private int remainResource;
-    private int reduceValue = 0;
+    [SerializeField]private int reduceValue = 0;
 
     public LineRenderer Orbit { set => orbit = value; }
 

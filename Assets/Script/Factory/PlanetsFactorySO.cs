@@ -31,6 +31,7 @@ public class PlanetsFactorySO : ScriptableObject
             planet = Instantiate(planetPrefabs[0]);
         }
 
+        planet.setPlanetInfor(infor);
         planet.PlanetMoving.setData(infor.revolutionSpeed, infor.fixStarPosition, infor.rotationSpeed, this);
         createOrbit(infor, stars, planet);
         planet.setPlanetPos(infor.fixStarPosition, stars,infor.distance);

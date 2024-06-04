@@ -9,7 +9,7 @@ public class CivilHabitationFactorySO : ScriptableObject
 
     public CivilHabitation createHabition(Planet planet)
     {
-        if(planet.getPlanetType() == typeSOs[1])
+        if(planet.getPlanetType() == typeSOs[0])
         {
             return new TerrestrialPlanetHabitation(planet);
         }

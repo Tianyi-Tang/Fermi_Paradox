@@ -6,7 +6,7 @@ public class PlanetaryResourceCollector : MonoBehaviour
 {
     [SerializeField]private GameParameterSO mineParameter;
     private CivilizationSO civilization;
-    private int civilMineRate;
+    [SerializeField]private int civilMineRate;
     [SerializeField]private int totalResource = 0;
 
     private HashSet<IPlanetResource> allPlanets = new HashSet<IPlanetResource>();

@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662703420428354727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.301893, y: 0, z: -15.62531}
+  m_LocalPosition: {x: 26.029625, y: 3, z: 4.810074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7755704447297366398}
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetarySystem: {fileID: 6662703420428354746}
-  planetNum: 3
+  planetNum: 2
   planetsFactory: {fileID: 11400000, guid: f88e3fcd41749496aa3e20bdf6773ca0, type: 2}
   fixedStarFactory: {fileID: 11400000, guid: 3cdff225499ee4ca7885171449f747f4, type: 2}
   stars: {fileID: 5211903452095334277}
