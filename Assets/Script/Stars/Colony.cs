@@ -34,6 +34,11 @@ public class Colony : MonoBehaviour
         gameObject.GetComponent<PlanetaryResourceInitialize>().createCollector(system, civilization);
     }
 
+    public CivilizationSO getPlanetarySystemOwner()
+    {
+        return planetarySystemOwner;
+    }
+
     public bool getPlayerControl()
     {
         return playerCivil;

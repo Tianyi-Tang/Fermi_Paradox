@@ -13,36 +13,7 @@ public class PlanetarySystem : MonoBehaviour
 
     private int planetNum = 0;
 
-    [SerializeField]private CivilizationSO planetarySystemOwner;
-
     [SerializeField] private List<Ships> fleets;
-
-    [SerializeField]private int civilizationResource; //文明在该行星用有的资源
-
-    internal void addPlanet(PlanetaryResourceInitialize planetaryResourceInitialize)
-    {
-        throw new NotImplementedException();
-    }
-
-    float timeInterval = 0;
-    private GameParameterSO scienceDevelopment;
-
-    private void Start()
-    {
-        scienceDevelopment = GameParameterContainer.instance.getScienceDevelopmentSpeed();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (timeInterval >= 1.0)//每一秒钟执行一次
-        {
-            //civilizationScienceProgressIncrease();
-
-            timeInterval = 0;
-        }
-        timeInterval += Time.deltaTime;
-    }
 
     /// <summary>
     /// 隐藏的行星和轨道显现
@@ -80,72 +51,9 @@ public class PlanetarySystem : MonoBehaviour
             planetNum = num;
     }
 
-    ///// <summary>
-    ///// 执行文明占领行星的行为
-    ///// </summary>
-    ///// <param name="civilization">占领行星系的文明</param>
-    //public void occupy(CivilizationSO civilization)
-    //{
-    //    if (existCivilization())
-    //        changeCivilization(civilization);
-    //    else
-    //        firstOwner(civilization);
-    //    civilization.addNewPlanetarySystem(this);
-    //}
-
-
-    private void changeCivilization(CivilizationSO civilization)
-    {
-
-    }
-
-
-    ///// <summary>
-    ///// 当该星系第一次被文明占领
-    ///// </summary>
-    ///// <param name="civilization"></param>
-    //private void firstOwner(CivilizationSO civilization)
-    //{
-    //    planetarySystemOwner = civilization;
-    //    playControl = civilization.getPlayControl();
-    //    this.gameObject.AddComponent<DetectionSystem>();
-
-
-    //    if (playControl == true)
-    //        Invoke("addToDetectionManger", 0.02f);
-    //}
-
-    //private void addToDetectionManger()
-    //{ 
-    //    DetectionManager.DetectionInstance.addPlayer_detectionSystem(this.GetComponent<DetectionSystem>());
-    //}
-
-
-    ///// <summary>
-    ///// 如果行星系存在文明，则增加文明的科技研发进度
-    ///// </summary>
-    //private void civilizationScienceProgressIncrease()
-    //{
-    //    if (existCivilization() != false)
-    //        planetarySystemOwner.GetCivilScience().addScienceProgress( planetarySystemOwner.getGameStats_int(scienceDevelopment));
-    //}
-
-
-
-    ///// <summary>
-    ///// 判断该行星是否存在文明
-    ///// </summary>
-    ///// <returns>文明是否存在</returns>
-    //public bool existCivilization()
-    //{
-    //    if (planetarySystemOwner != null)
-    //        return true;
-    //    return false;
-    //}
-
     public void GetPlanets(IPlanetGetter getter)
     {
-        foreach(IPlanetarySystemControllable planet in planets)
+        foreach (IPlanetarySystemControllable planet in planets)
         {
             planet.addPlanetToGetter(getter);
         }
@@ -171,19 +79,6 @@ public class PlanetarySystem : MonoBehaviour
         this.fixedStar = fixedStar;
     }
 
-    public int getCivilizationResource()
-    {
-        return civilizationResource;
-    }
-
-    ///// <summary>
-    ///// 该行星系是否被文明占领
-    ///// </summary>
-    ///// <returns>是/否</returns>
-    //public bool getPlayControl()
-    //{
-    //    return playControl;
-    //}
 
     public void setFleets(List<Ships> fleets)
     {
@@ -195,21 +90,19 @@ public class PlanetarySystem : MonoBehaviour
         return fleets;
     }
 
-    public CivilArchivesSO getCivilArchives()
-    {
-        if (planetarySystemOwner == null)
-            return null;
-        else
-            return planetarySystemOwner.GetCivilArchives();
-    }
 
-    public CivilizationSO getPlanetarySystemOwner()
-    {
-        return planetarySystemOwner;
-    }
+    ///// <summary>
+    ///// 如果行星系存在文明，则增加文明的科技研发进度
+    ///// </summary>
+    //private void civilizationScienceProgressIncrease()
+    //{
+    //    if (existCivilization() != false)
+    //        planetarySystemOwner.GetCivilScience().addScienceProgress( planetarySystemOwner.getGameStats_int(scienceDevelopment));
+    //}
 
-    public void addResource(int exploitedResource)
-    {
-        civilizationResource += exploitedResource;
-    }
+
+
+
+
+
 }

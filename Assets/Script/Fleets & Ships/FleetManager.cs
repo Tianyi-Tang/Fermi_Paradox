@@ -30,7 +30,7 @@ public class FleetManager : MonoBehaviour
     {
         float minimumSpeed = getMinimum(getShipSpeed, ships);//舰队的整体速度为舰队中最慢的飞船决定
         int carryingEnergy = getTotal(getShipCrypticity, ships);
-        Fleet fleet = fleetFactorySO.creatFleet(destination, ships, minimumSpeed, carryingEnergy,departure.GetComponent<PlanetarySystem>().getPlanetarySystemOwner());
+        Fleet fleet = fleetFactorySO.creatFleet(destination, ships, minimumSpeed, carryingEnergy,departure.GetComponent<Colony>().getPlanetarySystemOwner());
         fleet.transform.position = departure.position;
     }
 
