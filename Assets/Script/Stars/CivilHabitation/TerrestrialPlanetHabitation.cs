@@ -6,7 +6,7 @@ public class TerrestrialPlanetHabitation : CivilHabitation
 {
     static int mineDisadv = -1;
 
-    public TerrestrialPlanetHabitation(Planet planet)
+    public TerrestrialPlanetHabitation(IPlanetResource planet)
     {
         this.planet = planet;
     }
@@ -14,5 +14,6 @@ public class TerrestrialPlanetHabitation : CivilHabitation
     protected override void recalcuate()
     {
         finallMineRate = civilMineRate + mineDisadv;
+        sendToPlanet();
     }
 }

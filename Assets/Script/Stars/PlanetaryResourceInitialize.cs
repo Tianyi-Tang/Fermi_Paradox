@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class PlanetaryResourceInitialize : MonoBehaviour,IPlanetGetter
 {
-    private HashSet<Planet> allPlanets = new HashSet<Planet>();
-
     [SerializeField] private CivilHabitationFactorySO factory;
+    PlanetaryResourceCollector collector;
 
-    public void createCollector(PlanetarySystem system)
+    public void createCollector(PlanetarySystem system,CivilizationSO civilization)
     {
-        StartCoroutine(planetsReady(system));
+        collector = gameObject.AddComponent<PlanetaryResourceCollector>();
+        collector.setCivilization(civilization);
+        StartCoroutine(planetsReady(system,collector));
     }
 
     public void dddPlanet(Planet planet)
     {
-        factory.createHabition(planet);
-        allPlanets.Add(planet);
-
+        collector.addHabition(factory.createHabition(planet));
+        collector.addIPlanetResource(planet);
     }
 
-    IEnumerator planetsReady(PlanetarySystem system)
+    IEnumerator planetsReady(PlanetarySystem system, PlanetaryResourceCollector collector)
     {
-        while (!system.allPlanetReady())
+        while (!system.allPlanetReady() && collector.Setup())
             yield return null;
 
         system.GetPlanets(this);

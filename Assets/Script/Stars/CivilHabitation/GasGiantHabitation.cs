@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GasGiantHabitation : CivilHabitation
 {
-    public GasGiantHabitation(Planet planet)
+    public GasGiantHabitation(IPlanetResource planet)
     {
         this.planet = planet;
     }
@@ -14,6 +14,7 @@ public class GasGiantHabitation : CivilHabitation
     protected override void recalcuate()
     {
        finallMineRate = civilMineRate + mineAdvase;
+        sendToPlanet();
     }
 
 }

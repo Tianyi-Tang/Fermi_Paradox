@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class CivilHabitation 
 {
-    protected Planet planet;
+    protected IPlanetResource planet;
 
     protected int civilMineRate;
 
@@ -20,6 +20,12 @@ public abstract class CivilHabitation
     protected virtual void recalcuate()
     {
         finallMineRate = civilMineRate;
+        sendToPlanet();
+    }
+
+    protected void sendToPlanet()
+    {
+        planet.MineRate = finallMineRate;
     }
 
 }

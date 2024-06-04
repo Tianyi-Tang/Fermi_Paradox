@@ -25,7 +25,7 @@ public class Planet : MonoBehaviour, IPlanetInitialize,IPlanetarySystemControlla
     public LineRenderer Orbit { set => orbit = value; }
 
     public PlanetMoving PlanetMoving { get => moving; }
-    public int setRedurceResource { set => reduceValue =value; }
+    public int MineRate { set => reduceValue =value; }
 
     public void setPlanetInfor(PlanetInfor infor)
     {

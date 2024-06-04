@@ -8,7 +8,12 @@ public class Colony : MonoBehaviour
     private bool playerCivil;
 
     [SerializeField] private DetectionSystem detection;
-    [SerializeField] private GameParameterSO mineRateParameter;
+    private PlanetarySystem system;
+
+    private void Start()
+    {
+        system = gameObject.GetComponent<PlanetarySystem>();   
+    }
 
     public void occupy(CivilizationSO civilization)
     {
@@ -26,6 +31,7 @@ public class Colony : MonoBehaviour
         if (civilization.getPlayControl())
             DetectionManager.DetectionInstance.addPlayer_detectionSystem(detection);
         playerCivil = civilization.getPlayControl();
+        
     }
 
     public bool getPlayerControl()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPlanetResource
 {
-    public int setRedurceResource{ set; }
+    public int MineRate{ set; }
 
     public int reduceResource();
 }
